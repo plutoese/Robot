@@ -12,7 +12,7 @@
 import os
 import re
 from libs.file.class_pathparse import PathParse
-import zipfile
+import shutil
 
 class Path:
     """Path类用来处理文件夹
@@ -49,7 +49,7 @@ class Path:
         """寻找目录
 
         :param str piece: 目录关键字
-        :return: 
+        :return:
         """
         for item in os.walk(self.__full_path):
             if re.search(os.path.split(item[0])[1],piece) is not None:
@@ -59,10 +59,7 @@ class Path:
     def compress(self):
         zip_file_name = ''.join([self.parse.file_name_with_dir,'.zip'])
         print(zip_file_name)
-        newZip = zipfile.ZipFile(zip_file_name, 'w')
-        print('hhhhhh',self.parse.file_name_with_dir)
-        newZip.write(self.parse.file_name_with_dir, compress_type=zipfile.ZIP_DEFLATED)
-        newZip.close()
+        shutil.make_archive(zip_file_name,'zip',self.__full_path,'.')
         return zip_file_name
 
     @property
