@@ -16,16 +16,9 @@ class FileRobot:
     """FileRobot类用来进行文件整理、归档和查询工作
 
     """
-    def __init__(self, file_path = 'E:/warehouse'):
-        self.__file_path = file_path
+    def __init__(self, dirty_path='E:\\room\\forawhile',clean_path='E:\\room\\libs'):
+        pass
 
-
-    def files_in_path(self, file_path):
-        if os.path.isdir(file_path):
-            pass
-        else:
-            print('It is not a file directory!')
-            raise FileNotFoundError
 
 
 if __name__ == '__main__':

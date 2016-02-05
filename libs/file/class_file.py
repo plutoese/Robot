@@ -19,20 +19,32 @@ class File:
 
     """
     def __init__(self, file_name_with_dir):
-        if os.path.isfile(file_name_with_dir):
+        if os.path.isfile(file_name_with_dir) or os.path.isdir(file_name_with_dir):
             self.__file_name_with_dir = file_name_with_dir
         else:
             print('{} is not a directory!'.format(file_name_with_dir))
             raise FileNotFoundError
 
         self.__dir, self.__full_file_name = os.path.split(self.__file_name_with_dir)
-        self.__file_name, self.__file_extension = re.split('\.',self.__full_file_name)
+        tmp_split = re.split('\.',self.__full_file_name)
+        if len(tmp_split) < 2:
+            self.__file_name = self.__full_file_name
+            self.__file_extension = None
+        elif len(tmp_split) < 3:
+            self.__file_name, self.__file_extension = re.split('\.',self.__full_file_name)
+        else:
+            self.__file_extension = tmp_split.pop(len(tmp_split)-1)
+            self.__file_name = '.'.join(tmp_split)
         # 处理分解文件名
         self.__filename_parse()
 
     @property
     def last_modified(self):
         return datetime.datetime.fromtimestamp(os.path.getmtime(self.__file_name_with_dir))
+
+    @property
+    def file_name_with_dir(self):
+        return self.__file_name_with_dir
 
     @property
     def file_name(self):
@@ -67,8 +79,12 @@ class File:
         return self.__dirs
 
     @property
-    def new_file_name(self):
-        return self.__new_file_name
+    def project(self):
+        return self.__projects
+
+    @property
+    def isPacked(self):
+        return self.__packed
 
     def __len__(self):
         return os.path.getsize(self.__file_name_with_dir)
@@ -87,45 +103,59 @@ class File:
         self.__version = None
         self.__tags = None
         self.__dirs = None
+        self.__projects = None
+        self.__packed = False
 
         # 析出作者
-        tmp_search_result = re.search('@[a-zA-Z0-9]+',self.__file_name)
+        tmp_search_result = re.search('@[^{#$%&=]+',self.__file_name)
         if tmp_search_result is not None:
             self.__author = re.sub('@','',tmp_search_result.group())
 
         # 析出时间
-        tmp_search_result = re.search('#[a-zA-Z0-9]+',self.__file_name)
+        tmp_search_result = re.search('#[^@{$%&=]+',self.__file_name)
         if tmp_search_result is not None:
             self.__time = re.sub('#','',tmp_search_result.group())
 
         # 析出版本号
-        tmp_search_result = re.search('$[a-zA-Z0-9]+',self.__file_name)
+        tmp_search_result = re.search('$[^@#{%&=]+',self.__file_name)
         if tmp_search_result is not None:
             self.__version = re.sub('$','',tmp_search_result.group())
 
         # 析出标签
-        tmp_search_result = re.search('%[a-zA-Z0-9%]+',self.__file_name)
+        tmp_search_result = re.search('%[^@#${&=]+',self.__file_name)
         if tmp_search_result is not None:
             self.__tags = [item for item in re.split('%',tmp_search_result.group()) if len(item) > 0]
 
         # 析出目录
-        tmp_search_result = re.search('&[a-zA-Z0-9&]+',self.__file_name)
+        tmp_search_result = re.search('&[^@#$%{=]+',self.__file_name)
         if tmp_search_result is not None:
             self.__dirs = [item for item in re.split('&',tmp_search_result.group()) if len(item) > 0]
 
+        # 析出项目名
+        tmp_search_result = re.search('\{[^@#$%&=]+',self.__file_name)
+        if tmp_search_result is not None:
+            self.__projects = [item for item in re.split('\{',tmp_search_result.group()) if len(item) > 0]
+
+        # 是否打包
+        # 析出项目名
+        tmp_search_result = re.search('=',self.__file_name)
+        if tmp_search_result is not None:
+            self.__packed = True
+
 
 if __name__ == '__main__':
-    file = File('D:/down/demo@glen#2012%database%mongodb.xlsx')
+    file = File('D:\\down\\选课手册导出@glen#2012%database%mongodb%test   blank{自科基金{社科基金=')
     print(file.file_name)
     print(file.directory)
     print(file.extension)
     print(file.last_modified)
     print(len(file))
-    print(file.same_file('D:/down/demo@glen#2012%database%mongodb.xlsx'))
+    print(file.same_file('D:\\down\\demo@glen#2012%database%mongodb%test   blank{自科基金{社科基金.xlsx'))
     print(file.author)
     print(file.dirs)
     print(file.time)
     print(file.version)
     print(file.tags)
-    print(file.dirs)
-    print(file.new_file_name)
+    print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+    print(file.project)
+    print(file.isPacked)
