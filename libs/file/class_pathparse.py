@@ -14,8 +14,8 @@ import re
 import datetime
 
 
-class File:
-    """File类用来处理文件
+class PathParse:
+    """File类用来处理文件和文件夹解析
 
     """
     def __init__(self, file_name_with_dir):
@@ -144,7 +144,7 @@ class File:
 
 
 if __name__ == '__main__':
-    file = File('D:\\down\\选课手册导出@glen#2012%database%mongodb%test   blank{自科基金{社科基金=')
+    file = PathParse('D:\\down\\选课手册导出@glen#2012%database%mongodb%test   blank{自科基金{社科基金=')
     print(file.file_name)
     print(file.directory)
     print(file.extension)

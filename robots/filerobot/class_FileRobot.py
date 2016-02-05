@@ -17,7 +17,8 @@ class FileRobot:
 
     """
     def __init__(self, dirty_path='E:\\room\\forawhile',clean_path='E:\\room\\libs'):
-        pass
+        self.__dirty_path = dirty_path
+        self.__clean_path = clean_path
 
 
 

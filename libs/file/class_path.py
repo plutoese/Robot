@@ -10,13 +10,18 @@
 # --------------------------------------------------------------
 
 import os
-
+import re
+from libs.file.class_pathparse import PathParse
+import zipfile
 
 class Path:
     """Path类用来处理文件夹
 
     """
     def __init__(self, full_path, base_path=None):
+
+        self.parse = PathParse(full_path)
+
         if os.path.isdir(full_path):
             self.__full_path = full_path
             self.__parent_path, self.__path = os.path.split(self.__full_path)
@@ -39,6 +44,26 @@ class Path:
         self.__path_included = []
         for path in os.walk(self.__full_path):
             print(path)
+
+    def find(self,piece):
+        """寻找目录
+
+        :param str piece: 目录关键字
+        :return: 
+        """
+        for item in os.walk(self.__full_path):
+            if re.search(os.path.split(item[0])[1],piece) is not None:
+                return item[0]
+        return None
+
+    def compress(self):
+        zip_file_name = ''.join([self.parse.file_name_with_dir,'.zip'])
+        print(zip_file_name)
+        newZip = zipfile.ZipFile(zip_file_name, 'w')
+        print('hhhhhh',self.parse.file_name_with_dir)
+        newZip.write(self.parse.file_name_with_dir, compress_type=zipfile.ZIP_DEFLATED)
+        newZip.close()
+        return zip_file_name
 
     @property
     def full_path(self):
@@ -74,6 +99,9 @@ if __name__ == '__main__':
     print(file_path.relative_path)
     print(file_path.relative_parent_path)
     print(file_path.included)
+    print('***********************')
+    print(file_path.find('共享'))
+    file_path.compress()
 
 
 
