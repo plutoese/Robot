@@ -57,10 +57,25 @@ class Path:
         return None
 
     def compress(self):
+        """压缩目录为zip文件
+
+        :return:
+        """
         zip_file_name = ''.join([self.parse.file_name_with_dir,'.zip'])
         print(zip_file_name)
         shutil.make_archive(zip_file_name,'zip',self.__full_path,'.')
         return zip_file_name
+
+    def append_file_suffix(self,suffix=None):
+        """添加后缀到目录下的所有文件
+
+        :param suffix:
+        :return:
+        """
+        for item in os.walk(self.__full_path):
+            [os.rename(''.join([item[0],'\\',filename]),
+                       ''.join([item[0],'\\',PathParse(''.join([item[0],'\\',filename])).file_name_without_extension,suffix,'.',PathParse(''.join([item[0],'\\',filename])).extension]))
+             for filename in item[2]]
 
     @property
     def full_path(self):
@@ -87,7 +102,7 @@ class Path:
         return os.walk(self.__full_path)
 
 if __name__ == '__main__':
-    file_path = Path('E:\\piles\\teacher','E:\\')
+    file_path = Path('E:\\piles\\temp','E:\\')
     file_path.walk_and_record()
     print(file_path.full_path)
     print(file_path.path)
@@ -98,7 +113,8 @@ if __name__ == '__main__':
     print(file_path.included)
     print('***********************')
     print(file_path.find('共享'))
-    file_path.compress()
+    #file_path.compress()
+    file_path.append_file_suffix('@glen#2012%database%mongodb%test')
 
 
 

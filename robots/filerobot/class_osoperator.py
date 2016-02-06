@@ -47,6 +47,10 @@ class OSOperator:
     def rmdir(cls,path):
         os.rmdir(path)
 
+    @classmethod
+    def rename(cls,src,dst):
+        os.rename(src,dst)
+
 if __name__ == '__main__':
     op = OSOperator()
     op.read_from_dir(r'E:\piles\teacher\Applied statistics',True,'d:\\down\\result.xlsx')

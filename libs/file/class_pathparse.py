@@ -47,6 +47,10 @@ class PathParse:
         return self.__file_name_with_dir
 
     @property
+    def file_name_without_extension(self):
+        return self.__file_name
+
+    @property
     def file_name(self):
         return self.__full_file_name
 
@@ -144,8 +148,9 @@ class PathParse:
 
 
 if __name__ == '__main__':
-    file = PathParse('D:\\down\\选课手册导出@glen#2012%database%mongodb%test   blank{自科基金{社科基金=')
+    file = PathParse('D:\\down\\demo@glen#2012%database%mongodb%test   blank{自科基金{社科基金.xlsx')
     print(file.file_name)
+    print(file.file_name_without_extension)
     print(file.directory)
     print(file.extension)
     print(file.last_modified)
