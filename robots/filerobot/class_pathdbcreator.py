@@ -11,7 +11,7 @@
 
 import re
 import os
-from libs.file.class_file import File
+from libs.file.class_pathparse import PathParse
 from libs.file.class_path import Path
 from libs.database.class_mongodb import MongoDB
 
@@ -60,7 +60,7 @@ class PathDataBaseCreator:
             # 插入文件信息
             if len(filenames) > 0:
                 for file in filenames:
-                    mfile = File(os.path.join(dirpath,file))
+                    mfile = PathParse(os.path.join(dirpath,file))
                     file_tags = mfile.tags
                     print(mfile.file_name_with_dir)
                     self.__file_db.collection.insert_one({
@@ -98,7 +98,7 @@ class PathDataBaseCreator:
         self.__tag_db.close()
 
 if __name__ == '__main__':
-    file_path = PathDataBaseCreator('E:\\piles')
+    file_path = PathDataBaseCreator('E:\\room\\libs')
     file_path.to_create_path_and_file_db()
     file_path.close_db()
 
