@@ -3,7 +3,7 @@
 # --------------------------------------------------------------
 # class_PathDataBaseCreator文件
 # @class: PathDataBaseCreator
-# @introduction: PathDataBaseCreator类用来通过文件夹创建数据库
+# @introduction: PathDataBaseCreator类用来通过文件夹创建和更新数据库
 # @dependency: File, Path类
 # @author: plutoese
 # @date: 2016.01.28
@@ -16,10 +16,11 @@ from libs.file.class_path import Path
 from libs.database.class_mongodb import MongoDB
 
 class PathDataBaseCreator:
-    """PathDataBaseCreator类用来通过文件夹创建数据库
+    """PathDataBaseCreator类用来通过文件夹创建和更新数据库
 
     """
     def __init__(self, path):
+        # 设置文件库路径名称
         self.__path_name = path
         self.__path = Path(self.__path_name)
 
@@ -49,12 +50,14 @@ class PathDataBaseCreator:
                 self.__path_db.collection.insert_one({'path':Path(dirpath,self.__path_name).relative_path,
                                                       'path_name': Path(dirpath,self.__path_name).path,
                                                       'parent_path_id':None,
+                                                      'last_modified':Path(dirpath,self.__path_name).parse.last_modified,
                                                       'children_id':[]})
             else:
                 path_parent_id = self.__path_db.collection.find_one({'path':path_parent})['_id']
                 self.__path_db.collection.insert_one({'path':Path(dirpath,self.__path_name).relative_path,
                                                       'path_name': Path(dirpath,self.__path_name).path,
                                                       'parent_path_id':path_parent_id,
+                                                      'last_modified':Path(dirpath,self.__path_name).parse.last_modified,
                                                       'children_id':[]})
 
             # 插入文件信息

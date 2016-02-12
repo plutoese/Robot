@@ -1,7 +1,7 @@
 # coding=UTF-8
 
 # --------------------------------------------------------------
-# class_Path文件
+# class_path文件
 # @class: Path
 # @introduction: Path类用来处理文件夹
 # @dependency: os, os.path包
@@ -11,90 +11,139 @@
 
 import os
 import re
-from libs.file.class_pathparse import PathParse
+from libs.file.class_pathparser import PathParser
+from libs.file.class_file import File
 import shutil
 
+
 class Path:
+    # 属性
+    # 绝对路径
+    __absolute_path = None
+    # 基础路径，用来演算相对路径
+    __base_path = None
+    # 父路径
+    __absolute_parent_path = None
+    # 当前路径
+    __current_path = None
+    # 相对路径
+    __relative_path = None
+    # 相对父路径
+    __relatvie_parent_path = None
+    # 目录名处理
+    __path_parser = None
+
     """Path类用来处理文件夹
 
     """
-    def __init__(self, full_path, base_path=None):
-        # 调用PathParse类对目录名进行解析
-        self.parse = PathParse(full_path)
-        # 如果full_path是目录，继续进行；否则就报错
-        if os.path.isdir(full_path):
-            # self.__full_path是完整目录
-            self.__full_path = full_path
-            # self.__parent_path是父目录
-            # self.__path是当前目录
-            self.__parent_path, self.__path = os.path.split(self.__full_path)
+
+    def __init__(self, absolute_path, base_path=None):
+        if os.path.isdir(absolute_path):
+            self.__absolute_path = absolute_path
+            self.__path_parser = PathParser(self.__absolute_path)
+            # self.__absolute_parent_path是父目录
+            # self.__current_path是当前目录
+            self.__absolute_parent_path, self.__current_path = os.path.split(self.__absolute_path)
         else:
-            print('{} is not a directory!'.format(full_path))
+            print('{} is not a directory!'.format(self.__absolute_path))
             raise FileNotFoundError
 
-        # 设定self.__base_path，是为了获得相对目录
-        self.__base_path = base_path
-        self.__relative_path = None
-        # 设置相对目录，和相对父目录
         if base_path is not None:
-            if os.path.isdir(base_path):
-                self.__relative_path = os.path.relpath(self.__full_path,self.__base_path)
-                self.__relative_parent_path = os.path.relpath(self.__parent_path,self.__base_path)
+            if os.path.isdir(absolute_path):
+                self.__base_path = base_path
+                self.__relative_path = os.path.relpath(self.__absolute_path, self.__base_path)
+                self.__relatvie_parent_path = os.path.relpath(self.__absolute_parent_path, self.__base_path)
             else:
-                print('{} is not a directory!'.format(base_path))
+                print('{} is not a directory!'.format(self.base_path))
                 raise FileNotFoundError
 
-    # 这个方法用来打印目录下所有子目录和文件
-    def walk_and_record(self):
-        self.__path_included = []
-        for path in os.walk(self.__full_path):
-            print(path)
+    # 通过路径名寻找路径
+    def find_all(self, keyword, perfect=True):
+        """通过关键词寻找路径
 
-    def find(self,keyword):
-        if isinstance(keyword,str):
-            return self.find_by_string(keyword)
+        :param str,list keyword: 路径名称关键字
+        :param bool perfect: 是否完美匹配
+        :return: 路径
+        :rtype: Path类对象
+        """
+        if isinstance(keyword, str):
+            return self.find_by_string(keyword, perfect)
+        elif isinstance(keyword, (tuple, list)):
+            return self.find_by_string(keyword[0], perfect)
         else:
-            return self.find_by_list(keyword)
+            raise TypeError
 
-    # 通过字符串寻找路径
-    def find_by_string(self,piece):
-        """寻找目录
+    # 通过路径名寻找路径
+    def find_one(self, keyword, perfect=True):
+        """通过关键词寻找路径
 
-        :param str piece: 目录关键字
+        :param str,list keyword: 路径名称关键字
+        :param bool perfect: 是否完美匹配
+        :return: 路径
+        :rtype: Path类对象
+        """
+        if isinstance(keyword, str):
+            return self.find_by_string(keyword, perfect, False)
+        elif isinstance(keyword, (tuple, list)):
+            return self.find_by_list(keyword, perfect)
+        else:
+            raise TypeError
+
+    def find_by_string(self, piece, perfect, all=True):
+        """通过字符串寻找路径
+
+        :param piece:
+        :param perfect:
         :return:
         """
-        for item in os.walk(self.__full_path):
-            if re.match(os.path.split(item[0])[1],piece) is not None:
-                return os.path.normpath(item[0])
-        return None
+        result = []
+        for item in os.walk(self.__absolute_path):
+            if perfect:
+                if os.path.split(item[0])[1] == piece:
+                    result.append(Path(item[0], self.base_path))
+            else:
+                if os.path.split(item[0])[1].find(piece) > -1:
+                    result.append(Path(item[0], self.base_path))
 
-    # 通过字符串列表寻找路径
-    def find_by_list(self,pieces):
-        """寻找目录
-
-        :param list pieces: 目录关键字
-        :return:
-        """
-        base_path = self.__full_path
-        for piece in pieces:
-            for item in os.walk(base_path):
-                 if re.match(os.path.split(item[0])[1],piece) is not None:
-                    base_path = item[0]
-                    continue
-        if base_path == self.__full_path:
+        if len(result) < 1:
             return None
         else:
-            return base_path
+            if all:
+                return result
+            else:
+                return result[0]
 
-    # 压缩目录为zip文件，并且返回zip文件的完整目录
+    def find_by_list(self, pieces, perfect):
+        """通过列表寻找路径
+
+        :param pieces:
+        :param perfect:
+        :return:
+        """
+        base_path = self.__absolute_path
+        for piece in pieces:
+            for item in os.walk(base_path):
+                if perfect:
+                    if os.path.split(item[0])[1] == piece:
+                        base_path = item[0]
+                        break
+                else:
+                    if os.path.split(item[0])[1].find(piece) > -1:
+                        base_path = item[0]
+                        break
+
+        if base_path == self.__absolute_path:
+            return None
+        else:
+            return Path(base_path,self.base_path)
+
     def compress(self):
-        """压缩目录为zip文件
+        """压缩目录为zip文件，并且返回zip文件的完整目录
 
         :return:
         """
-        #zip_file_name = ''.join([self.parse.file_name_with_dir,'.zip'])
-        shutil.make_archive(self.parse.file_name_with_dir,'zip',self.__full_path,'.')
-        return os.path.normpath(''.join([self.parse.file_name_with_dir,'.zip']))
+        shutil.make_archive(self.absolute_path,'zip',self.absolute_path,'.')
+        return File(''.join([self.absolute_path,'.zip']))
 
     def append_file_suffix(self,suffix=None):
         """添加后缀到目录下的所有文件
@@ -102,80 +151,88 @@ class Path:
         :param suffix:
         :return:
         """
-        for item in os.walk(self.__full_path):
+        for item in os.walk(self.__absolute_path):
             [os.rename(''.join([item[0],'\\',filename]),
-                       ''.join([item[0],'\\',PathParse(''.join([item[0],'\\',filename])).file_name_without_extension,suffix,'.',PathParse(''.join([item[0],'\\',filename])).extension]))
+                       ''.join([item[0],'\\',PathParser(''.join([item[0],'\\',filename])).path_name_without_extension,suffix,'.',PathParser(''.join([item[0],'\\',filename])).extension]))
              for filename in item[2]]
 
-    def is_child_of(self,parent_path):
-        if not os.path.isdir(parent_path):
-            print('{} is not a valid path.'.format(parent_path))
+    def is_child_of(self,new_path):
+        """测试是否为某目录的子目录
+
+        :param new_path: 某目录
+        :return:
+        """
+        if not os.path.isdir(new_path):
+            print('{} is not a valid path.'.format(new_path))
             raise TypeError
         else:
-            normal_parent_path = os.path.normpath(parent_path)
-            normal_path = os.path.split(os.path.normpath(self.full_path))[0]
-            if normal_parent_path == normal_path:
+            normal_new_path = os.path.normpath(new_path)
+            print(normal_new_path,self.absolute_parent_path)
+            if normal_new_path == self.absolute_parent_path:
                 return True
             else:
                 return False
 
-    def is_have_special_symbol(self,special_symbol='@#$%&{='):
-        path_set = set(self.path)
-        for item in special_symbol:
-            if item in path_set:
-                return True
-        return False
-
+    @property
+    def absolute_path(self):
+        return os.path.normpath(self.__absolute_path)
 
     @property
-    def full_path(self):
-        return os.path.normpath(self.__full_path)
+    def base_path(self):
+        if self.__base_path is not None:
+            return os.path.normpath(self.__base_path)
+        return None
 
     @property
-    def path(self):
-        return os.path.normpath(self.__path)
+    def absolute_parent_path(self):
+        if self.__absolute_parent_path is not None:
+            return os.path.normpath(self.__absolute_parent_path)
+        return None
 
     @property
-    def parent_path(self):
-        return os.path.normpath(self.__parent_path)
+    def current_path(self):
+        if self.__current_path is not None:
+            return os.path.normpath(self.__current_path)
+        return None
 
     @property
     def relative_path(self):
-        return os.path.normpath(self.__relative_path)
+        if self.__relative_path is not None:
+            return os.path.normpath(self.__relative_path)
+        return None
 
     @property
-    def relative_parent_path(self):
-        return os.path.normpath(self.__relative_parent_path)
+    def relatvie_parent_path(self):
+        if self.__relatvie_parent_path is not None:
+            return os.path.normpath(self.__relatvie_parent_path)
+        return None
+
+    @property
+    def parser(self):
+        return self.__path_parser
 
     @property
     def included(self):
-        return os.walk(self.__full_path)
+        return os.walk(self.absolute_path)
+
+    def __repr__(self):
+        fmt = ''.join(['absolute path                       : {0}\n',
+                       'base path                           : {1}\n',
+                       'absolute parent path                : {2}\n',
+                       'current path                        : {3}\n',
+                       'relative path                       : {4}\n',
+                       'relatvie parent path                : {5}\n'])
+        return fmt.format(self.absolute_path,
+                          self.base_path,
+                          self.absolute_parent_path,
+                          self.current_path,
+                          self.relative_path,
+                          self.relatvie_parent_path
+                          )
+
 
 if __name__ == '__main__':
-    file_path = Path('E:\\piles\\temp','E:\\')
-    file_path.walk_and_record()
-    print(file_path.full_path)
-    print(file_path.path)
-    print(file_path.parent_path)
-    print('-----------------------')
-    print(file_path.relative_path)
-    print(file_path.relative_parent_path)
-    print(file_path.included)
-    print('***********************')
-    print(file_path.find(['yadong','yes']))
-    print('newssssssssssss',os.path.isfile(file_path.compress()))
-    #file_path.append_file_suffix('@glen#2012%database%mongodb%test')
-    print('^^^^^^^^^^^^^^^^^^^^^^^^^')
-    print(file_path.is_child_of('E:/room'))
-    file_path2 = Path(r'E:\room\forawhile\personalnote@glen#2012%note&researchproject')
-    #file_path2 = Path(r'E:\room\forawhile\选课手册导出@glen#2012%database%mongodb%test   blank{自科基金{社科基金=')
-    print(file_path2.path)
-    print(file_path2.is_have_special_symbol())
-
-
-
-
-
-
-
-
+    file_path = Path(r'E:\room\forawhile\personalnote@glen#2012%note&researchproject', r'E:\room')
+    print(file_path.find_one(['guess','good'], False))
+    print(file_path.compress())
+    print(file_path.is_child_of(r'E:\room\forawhile'))
