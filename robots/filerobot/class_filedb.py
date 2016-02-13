@@ -4,13 +4,14 @@
 # class_filedb文件
 # @class: FileDB
 # @introduction: FileDB类连接filedb数据库
-# @dependency: MongoDB类
+# @dependency: MongoDB，defaultdict，ObjectId及PathDB类，re和os模块
 # @author: plutoese
 # @date: 2016.02.09
 # --------------------------------------------------------------
 
 import re
 import os
+from collections import defaultdict
 from bson.objectid import ObjectId
 from libs.database.class_mongodb import MongoDB
 from robots.filerobot.class_pathdb import PathDB
@@ -35,30 +36,37 @@ class FileDB:
         :param path:
         :return:
         """
-        # 获得文件的路径信息
+        # 获得数据库中该文件的路径信息
         path_found = self.__path_db.collection.find_one({'path':path.relative_path})
         if path_found is None:
             print('Path wrong!')
             raise FileNotFoundError
-
+        # 获得文件的信息
         file_found = self.collection.find_one({'full_file_name_without_sc':
                                                    os.path.join(path.relative_path,file.parser.path_name_without_special_characters)})
 
+        # 如果数据库里没有相关文件信息，则插入此文件信息；若有，比较两者是否一致。
         if file_found is not None:
+            # 变量fid是数据库中相关文件信息中的_id
             fid = file_found['_id']
-            print('what the hell>>>>>>>>>>>>>>>>>>>>>>>>>')
-            different = dict(list(self.make_document(file,path,path_found,True).items() - self.make_document_from_db_for_comparision(file_found).items()))
-            if 'tags' in different:
-                different['tags'] = re.split('\|',different['tags'])
-            if 'projects' in different:
-                different['projects'] = re.split('\|',different['projects'])
-            print(different)
-            if len(different) > 0:
-                print(file_found)
+            # 目录中文件信息与数据库相关文件信息的差异
+            difference = dict(list(self.make_document(file,path,path_found,True).items() - self.make_document_from_db_for_comparision(file_found).items()))
+            #更改tags和projects的格式
+            if 'tags' in difference:
+                difference['tags'] = re.split('\|',difference['tags'])
+            if 'projects' in difference:
+                difference['projects'] = re.split('\|',difference['projects'])
+            if 'last_modified' in difference:
+                difference['last_modified'] = file.parser.last_modified
+            # 若存在差异，则更新数据库中的信息
+            if len(difference) > 0:
                 self.collection.find_one_and_update({'_id':fid},
-                                                    {'$set':different})
+                                                    {'$set':difference})
+            return fid
         else:
+            # 若数据库中无此文件信息，那么插入此信息
             self.collection.insert_one(self.make_document(file,path,path_found,False))
+            return None
 
     def make_document(self,file,path,path_found,for_comparision=False):
         if for_comparision:
@@ -113,6 +121,19 @@ class FileDB:
         else:
             record['projects'] = None
         return record
+
+    def delete_many(self,ids):
+         for item in ids:
+            self.collection.delete_one({'_id':ObjectId(item)})
+
+    def make_tag_document(self):
+        tags = defaultdict(list)
+        tag_items = self.collection.find({},{'_id':1,'tags':1})
+        for item in tag_items:
+            for tag in item['tags']:
+                tags[tag].append(item['_id'])
+        return tags
+
 
     def close(self):
         self.__file_db.close()
