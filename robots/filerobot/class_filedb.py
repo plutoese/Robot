@@ -11,11 +11,12 @@
 
 import re
 import os
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 from bson.objectid import ObjectId
 from libs.database.class_mongodb import MongoDB
 from robots.filerobot.class_pathdb import PathDB
-
+from datetime import datetime
+from robots.filerobot.class_osoperator import OSOperator
 
 class FileDB:
     """FileDB类连接filedb数据库
@@ -36,6 +37,7 @@ class FileDB:
         :param path:
         :return:
         """
+        #print('path',path.relative_path)
         # 获得数据库中该文件的路径信息
         path_found = self.__path_db.collection.find_one({'path':path.relative_path})
         if path_found is None:
@@ -44,7 +46,6 @@ class FileDB:
         # 获得文件的信息
         file_found = self.collection.find_one({'full_file_name_without_sc':
                                                    os.path.join(path.relative_path,file.parser.path_name_without_special_characters)})
-
         # 如果数据库里没有相关文件信息，则插入此文件信息；若有，比较两者是否一致。
         if file_found is not None:
             # 变量fid是数据库中相关文件信息中的_id
@@ -58,6 +59,8 @@ class FileDB:
                 difference['projects'] = re.split('\|',difference['projects'])
             if 'last_modified' in difference:
                 difference['last_modified'] = file.parser.last_modified
+            if 'time' in difference:
+                difference['time'] = file.parser.time
             # 若存在差异，则更新数据库中的信息
             if len(difference) > 0:
                 self.collection.find_one_and_update({'_id':fid},
@@ -79,7 +82,7 @@ class FileDB:
                         'last_modified': file.parser.last_modified.ctime(),
                         'size': len(file),
                         'author': file.parser.author,
-                        'time': file.parser.time,
+                        'time': file.parser.time.ctime(),
                         'version': file.parser.version}
             if file.parser.tags is not None:
                 document['tags'] = '|'.join(file.parser.tags)
@@ -111,6 +114,8 @@ class FileDB:
         record = file
         record.pop('_id')
         record['last_modified'] = record['last_modified'].ctime()
+        record['time'] = record['time'].ctime()
+
         if record['tags'] is not None:
             record['tags'] = '|'.join(record['tags'])
         else:
@@ -134,6 +139,25 @@ class FileDB:
                 tags[tag].append(item['_id'])
         return tags
 
+    def get_files_according_to_path_list(self,path_list):
+        result = OrderedDict()
+        for path in path_list:
+            path_found = self.__path_db.collection.find_one({'path':path})
+            files_found = self.collection.find({'directory':path_found['_id']})
+            result[path] = [file['file_name'] for file in files_found]
+        return result
+
+    def find_and_open(self,base_path,temp_path,**condition):
+        result = list(self.collection.find(condition))
+        if len(result) < 1:
+            return None
+        else:
+            for item in result:
+                source_file = os.path.join(base_path,item['full_file_name'])
+                destination_file = os.path.join(temp_path,item['file_name'])
+                OSOperator.copy_to(source_file,destination_file)
+            os.startfile(temp_path)
+            return "successfully!"
 
     def close(self):
         self.__file_db.close()
@@ -141,4 +165,10 @@ class FileDB:
 
 if __name__ == '__main__':
     filedb = FileDB()
+    path_list = ['teacher', 'teacher\\econometricsteaching', 'teacher\\tutor', 'geeker', 'geeker\\python', 'geeker\\python\\books', 'geeker\\R', 'geeker\\R\\Rstudio', 'geeker\\R\\Rstudio\\book']
+    filedb.get_files_according_to_path_list(path_list)
+
+    base_path = 'E:\\room\\libs'
+    temp_path = 'E:\\temp'
+    filedb.find_and_open(base_path,temp_path,last_modified={'$gt':datetime(2016,2,8)})
     filedb.close()

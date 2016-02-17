@@ -106,7 +106,15 @@ class PathParser:
 
     @property
     def time(self):
-        return self.__time
+        if self.__time is not None:
+            if len(self.__time) > 2:
+                return datetime.datetime(*self.__time)
+            elif len(self.__time) > 1:
+                return datetime.datetime(*self.__time,day=1)
+            else:
+                return datetime.datetime(*self.__time,month=1,day=1)
+        else:
+            return None
 
     @property
     def version(self):
@@ -130,12 +138,17 @@ class PathParser:
 
     @property
     def is_having_special_character(self):
-        if re.match('^$',self.special_character_part) is not None:
+        if self.__special_character_part is None:
             return False
         else:
             return True
 
     def __repr__(self):
+        if self.time is None:
+            time = ['None']
+        else:
+            time = self.time
+
         if self.tags is None:
             tags = ['None']
         else:
@@ -209,7 +222,7 @@ class PathParser:
         # 析出时间
         tmp_search_result = re.search('#[^@{$%&=]+',self.__path_name_without_extension)
         if tmp_search_result is not None:
-            self.__time = re.sub('#','',tmp_search_result.group())
+            self.__time = [int(item) for item in re.split('#',tmp_search_result.group()) if len(item) > 0]
 
         # 析出版本号
         tmp_search_result = re.search('$[^@#{%&=]+',self.__path_name_without_extension)
@@ -238,7 +251,8 @@ class PathParser:
 
 
 if __name__ == '__main__':
-    mpath = PathParser('D:\\down\\demo@glen#2012%database%mongodb%test   blank{自科基金{社科基金.xlsx')
+    mpath = PathParser('D:\\down\\demo@glen#2012%database%mongodb%test   blank{自科基金{社科基金&geeker.xlsx')
     #mpath = PathParser(r'E:\room\libs\creator')
     print(mpath)
     print(mpath.path_name_with_absolute_path_without_special_characters)
+    print(mpath.is_having_special_character)

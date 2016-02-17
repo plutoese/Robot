@@ -12,7 +12,7 @@
 import re
 from bson.objectid import ObjectId
 from libs.database.class_mongodb import MongoDB
-
+from collections import OrderedDict
 
 class PathDB:
     """PathDB类连接pathdb数据库
@@ -74,6 +74,7 @@ class PathDB:
                     if path_found is None:
                         self.collection.update_one({'_id':record['_id']},
                                                    {'$pull':{'children_id':pid}})
+                        continue
                     if path_found['parent_path_id'] != record['_id']:
                         self.collection.update_one({'_id':record['_id']},
                                                    {'$pull':{'children_id':pid}})
@@ -118,6 +119,31 @@ class PathDB:
 
         return document
 
+    # 应用数据库，返回目录树
+    def _raw_path_tree(self,root='.'):
+        result = []
+        root_path = self.collection.find_one({'path':root})
+        child_path = list(self.collection.find({'parent_path_id':root_path['_id']}))
+        if len(child_path) < 1:
+            return [root_path['path']]
+        else:
+            for item in child_path:
+                result.append(item['path'])
+                result.extend(self.path_tree(item['path']))
+            return result
+
+    # 应用数据库，返回目录树
+    def path_tree(self,root='.'):
+        result_set = set()
+        raw_result = self._raw_path_tree(root)
+        result = []
+        for item in raw_result:
+            if item not in result_set:
+                result.append(item)
+                result_set.add(item)
+
+        return result
+
     def delete_many(self,ids):
         """ 根据id删除数据库中的文档
 
@@ -137,4 +163,5 @@ class PathDB:
 
 if __name__ == '__main__':
     pathdb = PathDB()
+    print(pathdb.path_tree())
     pathdb.close()

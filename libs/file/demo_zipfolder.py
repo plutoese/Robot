@@ -2,7 +2,7 @@
 
 import os
 import re
-from libs.file.class_pathparse import PathParse
+from libs.file.class_pathparser import PathParser
 from libs.file.class_path import Path
 import zipfile
 import shutil

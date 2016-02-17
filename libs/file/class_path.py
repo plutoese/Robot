@@ -151,10 +151,22 @@ class Path:
         :param suffix:
         :return:
         """
+        all_files = []
         for item in os.walk(self.__absolute_path):
-            [os.rename(''.join([item[0],'\\',filename]),
-                       ''.join([item[0],'\\',PathParser(''.join([item[0],'\\',filename])).path_name_without_extension,suffix,'.',PathParser(''.join([item[0],'\\',filename])).extension]))
-             for filename in item[2]]
+            for filename in item[2]:
+                new_file_name = ''.join([item[0],'\\',PathParser(''.join([item[0],'\\',filename])).path_name_without_extension,
+                                         suffix,'.',PathParser(''.join([item[0],'\\',filename])).extension])
+                os.rename(''.join([item[0],'\\',filename]),new_file_name)
+                all_files.append(new_file_name)
+        return all_files
+
+    def remove_append_file_suffix(self,suffix=None):
+        if suffix is None:
+            for item in os.walk(self.__absolute_path):
+                for filename in item[2]:
+                    file = File('\\'.join([item[0],filename]))
+                    if file.parser.is_having_special_character:
+                        os.rename(file.file_name,file.parser.path_name_with_absolute_path_without_special_characters)
 
     def is_child_of(self,new_path):
         """测试是否为某目录的子目录
@@ -167,7 +179,7 @@ class Path:
             raise TypeError
         else:
             normal_new_path = os.path.normpath(new_path)
-            print(normal_new_path,self.absolute_parent_path)
+            #print(normal_new_path,self.absolute_parent_path)
             if normal_new_path == self.absolute_parent_path:
                 return True
             else:
@@ -232,7 +244,12 @@ class Path:
 
 
 if __name__ == '__main__':
-    file_path = Path(r'E:\room\forawhile\personalnote@glen#2012%note&researchproject', r'E:\room')
-    print(file_path.find_one(['guess','good'], False))
-    print(file_path.compress())
-    print(file_path.is_child_of(r'E:\room\forawhile'))
+    #file_path = Path(r'E:\room\forawhile\personalnote@glen#2012%note&researchproject', r'E:\room')
+    #print(file_path.find_one(['guess','good'], False))
+    #print(file_path.compress())
+    #print(file_path.is_child_of(r'E:\room\forawhile'))
+
+    file_path2 = Path(r'E:\room\forawhile\personalnote@glen#2012%note&teacher&tutor')
+    print(file_path2.parser.special_character_part)
+    #file_path2.append_file_suffix(file_path2.parser.special_character_part)
+    file_path2.remove_append_file_suffix()
