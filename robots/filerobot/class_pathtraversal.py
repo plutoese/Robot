@@ -18,14 +18,11 @@ from robots.filerobot.class_tagdb import TagDB
 
 
 class PathTraversal:
-    # 属性
-    # 绝对路径
-    __path = None
-
-    """PathTraversal类遍历文件夹更新数据库
+    """ PathTraversal类遍历文件夹更新数据库
 
     """
     def __init__(self, absolute_path):
+        # 设定类对象的变量
         # 设置文件库路径名称
         self.__path = Path(absolute_path)
 
@@ -80,14 +77,22 @@ class PathTraversal:
             tagid = self.tag_db.update(tag_dict)
             if tagid is not None:
                 self.tag_set.remove(tagid)
-
         self.tag_db.delete_many(self.tag_set)
 
     @property
     def path(self):
+        """ 返回路径对象
+
+        :return: 返回路径对象
+        :rtype: Path对象
+        """
         return self.__path
 
     def close_db(self):
+        """ 关闭数据库连接
+
+        :return: 无返回值
+        """
         self.path_db.close()
         self.file_db.close()
         self.tag_db.close()

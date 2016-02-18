@@ -12,10 +12,10 @@
 import re
 from bson.objectid import ObjectId
 from libs.database.class_mongodb import MongoDB
-from collections import OrderedDict
+
 
 class PathDB:
-    """PathDB类连接pathdb数据库
+    """ PathDB类连接pathdb数据库
 
     """
     def __init__(self):
@@ -57,17 +57,22 @@ class PathDB:
         这里分两个步骤，其一是遍历数据库，通过原文档的父路径id，查询父路径文档，并把源文档的id添加到父路径文档的children_id中；
         其二是遍历数据库，通过源文档的子路径id列表，查询子路径文档，并验证该子路径是否存在
 
-        :return:
+        :return: 无返回值
         """
+        # 遍历数据库
         for record in self.collection.find({}):
+            # 获得单个记录的父路径id
             record_parent_path_id = record['parent_path_id']
             if record_parent_path_id is not None:
+                # 查询父路径id指向的记录，则指向的记录是当前记录的父路径记录，那么该父路径的子路径集中必须有当前记录信息
                 children_id = set(self.collection.find_one({'_id':record_parent_path_id})['children_id'])
                 if record['_id'] not in children_id:
                     self.collection.update_one({'_id':record_parent_path_id},
                                                {'$addToSet':{'children_id':record.get('_id')}},upsert =True)
 
+        # 遍历数据库
         for record in self.collection.find({}):
+            # 如果存在子目录集合，那么查询每个子目录是否存在
             if len(record['children_id']) > 0:
                 for pid in record['children_id']:
                     path_found = self.collection.find_one({'_id':pid})
@@ -79,7 +84,13 @@ class PathDB:
                         self.collection.update_one({'_id':record['_id']},
                                                    {'$pull':{'children_id':pid}})
 
-    def make_document(self,path,for_comparision=False):
+    def make_document(self,path,for_comparison=False):
+        """ 根据path创建标准格式的数据库pathdb集合中的文档
+
+        :param path:
+        :param for_comparision:
+        :return:
+        """
         # 数据库中文档形式如下：
         # {
         #    path: 相对路径
@@ -88,7 +99,7 @@ class PathDB:
         #    last_modified: 最近修改时间
         #    children_id: 子目录列表
         # }
-        if for_comparision:
+        if for_comparison:
             # 根目录是.，如果是根目录，需要设置parent_path_id为None
             if re.match('^\.$',path.relative_path) is not None:
                 document = {'path':path.relative_path,
@@ -119,21 +130,36 @@ class PathDB:
 
         return document
 
-    # 应用数据库，返回目录树
     def _raw_path_tree(self,root='.'):
+        """ 辅助函数，根据数据库中的信息，返回目录树
+
+        :param str root: 起始路径
+        :return: 路径树
+        :rtype: list
+        """
         result = []
+        # 查询起始路径
         root_path = self.collection.find_one({'path':root})
+        # 查询子路径集合
         child_path = list(self.collection.find({'parent_path_id':root_path['_id']}))
+        # 如果没有子路径，则返回当前路径的集合
         if len(child_path) < 1:
             return [root_path['path']]
+        # 否则，添加子路径及以子路径为起始路径的下属路径
         else:
             for item in child_path:
                 result.append(item['path'])
-                result.extend(self.path_tree(item['path']))
+                result.extend(self._raw_path_tree(item['path']))
             return result
 
-    # 应用数据库，返回目录树
     def path_tree(self,root='.'):
+        """ 根据数据库中的信息，返回目录树
+
+        :param str root: 起始路径
+        :return: 路径树
+        :rtype: list
+        """
+        # 这里result_set的用途是排除重合的路径
         result_set = set()
         raw_result = self._raw_path_tree(root)
         result = []
@@ -163,5 +189,6 @@ class PathDB:
 
 if __name__ == '__main__':
     pathdb = PathDB()
+    print(pathdb._raw_path_tree())
     print(pathdb.path_tree())
     pathdb.close()

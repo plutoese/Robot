@@ -20,7 +20,10 @@ class MongoDB:
     :return: 无返回值
     """
     def __init__(self, host='localhost', port=27017):
+        # Client for a MongoDB instance
+        # The clent object is thread-safe and has connection-pooling built in.
         self.__client = MongoClient(host, port)
+        #
         self.__db = None
         self.__collection = None
 
@@ -45,22 +48,37 @@ class MongoDB:
             raise NameError
 
     def close(self):
-        """Disconnect from MongoDB
+        """ 关闭MongoDB连接
 
-        :return:
+        :return: 无返回值
         """
         self.client.close()
 
     @property
     def client(self):
+        """ 一个MongoDB实例的客户端
+
+        :return: 返回一个MongoDB实例的客户端
+        :rtype: pymongo.mong_client.MongoClient对象
+        """
         return self.__client
 
     @property
     def database(self):
+        """ MongoDB中的数据库
+
+        :return: 返回某个MongoDB中的数据库
+        :rtype: pymongo.database.Database对象
+        """
         return self.__db
 
     @property
     def collection(self):
+        """ MongoDB数据库中的集合
+
+        :return: 返回MongoDB数据库中的某集合
+        :rtype: pymongo.collection.Collection对象
+        """
         return self.__collection
 
 if __name__ == '__main__':

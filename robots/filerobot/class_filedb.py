@@ -18,8 +18,9 @@ from robots.filerobot.class_pathdb import PathDB
 from datetime import datetime
 from robots.filerobot.class_osoperator import OSOperator
 
+
 class FileDB:
-    """FileDB类连接filedb数据库
+    """ FileDB类连接filedb数据库
 
     """
     def __init__(self):
@@ -27,17 +28,17 @@ class FileDB:
         self.__file_db = MongoDB()
         self.__file_db.connect('FileIndex', 'filedb')
         self.collection = self.__file_db.collection
-
+        # pathdb数据集合
         self.__path_db = PathDB()
 
     def update(self,file,path):
-        """ 更新文件库信息
+        """ 根据file，更新文件库信息
 
-        :param file:
-        :param path:
-        :return:
+        :param file: 文件对象
+        :param path: 路径对象
+        :return: 返回当前文件在数据库中的id，如果数据库中无当前文件信息，返回None
+        :rtype: bson.objectid.ObjectId对象
         """
-        #print('path',path.relative_path)
         # 获得数据库中该文件的路径信息
         path_found = self.__path_db.collection.find_one({'path':path.relative_path})
         if path_found is None:
@@ -51,8 +52,8 @@ class FileDB:
             # 变量fid是数据库中相关文件信息中的_id
             fid = file_found['_id']
             # 目录中文件信息与数据库相关文件信息的差异
-            difference = dict(list(self.make_document(file,path,path_found,True).items() - self.make_document_from_db_for_comparision(file_found).items()))
-            #更改tags和projects的格式
+            difference = dict(list(self.make_document(file,path,path_found,True).items() - self.make_document_from_db(file_found).items()))
+            # 更改tags和projects的格式
             if 'tags' in difference:
                 difference['tags'] = re.split('\|',difference['tags'])
             if 'projects' in difference:
@@ -71,8 +72,18 @@ class FileDB:
             self.collection.insert_one(self.make_document(file,path,path_found,False))
             return None
 
-    def make_document(self,file,path,path_found,for_comparision=False):
-        if for_comparision:
+    @classmethod
+    def make_document(cls,file,path,path_found,for_comparison=False):
+        """ 根据file，path以及数据库中查询得到的path_found，创建符合数据库filedb集合标准格式的文档
+
+        :param File file: 文件对象
+        :param Path path: 路径对象
+        :param dict path_found: 数据库中查询得到的路径文档
+        :param bool for_comparison: 是否是用来进行比较
+        :return: 数据文档
+        :rtype: dict
+        """
+        if for_comparison:
             document = {'full_file_name': os.path.join(path.relative_path,file.parser.path_name),
                         'full_file_name_without_sc': os.path.join(path.relative_path,file.parser.path_name_without_special_characters),
                         'special_characters': file.parser.special_character_part,
@@ -110,7 +121,14 @@ class FileDB:
 
         return document
 
-    def make_document_from_db_for_comparision(self,file):
+    @classmethod
+    def make_document_from_db(cls,file):
+        """ 根据数据库中的文件文档对象创建新文档，进行比较
+
+        :param dict file: 文件对象
+        :return: 文档
+        :rtype: dict
+        """
         record = file
         record.pop('_id')
         record['last_modified'] = record['last_modified'].ctime()
@@ -128,10 +146,20 @@ class FileDB:
         return record
 
     def delete_many(self,ids):
-         for item in ids:
+        """ 根据id删除数据库中的文档
+
+        :param ids: 数据库中文档的_id列表
+        :return: 无返回值
+        """
+        for item in ids:
             self.collection.delete_one({'_id':ObjectId(item)})
 
     def make_tag_document(self):
+        """ 根据filedb数据库中的信息，生成tagdb中所需要的标准格式文档
+
+        :return: 标签文档
+        :rtype: defaultdict对象
+        """
         tags = defaultdict(list)
         tag_items = self.collection.find({},{'_id':1,'tags':1})
         for item in tag_items:
@@ -140,6 +168,12 @@ class FileDB:
         return tags
 
     def get_files_according_to_path_list(self,path_list):
+        """ 根据目录列表，补充文件信息
+
+        :param list path_list: 目录列表
+        :return: 完整的目录文件字典
+        :rtype: OrderedDict对象
+        """
         result = OrderedDict()
         for path in path_list:
             path_found = self.__path_db.collection.find_one({'path':path})
@@ -148,9 +182,17 @@ class FileDB:
         return result
 
     def find_and_open(self,base_path,temp_path,**condition):
+        """ 根据condition条件查询filedb数据库，复制查询得到的文件到temp_path，并且打开temp_path文件窗口
+
+        :param str base_path:
+        :param str temp_path:
+        :param dict condition:
+        :return: 返回成功或失败信息
+        :rtype: str
+        """
         result = list(self.collection.find(condition))
         if len(result) < 1:
-            return None
+            return "None is found!"
         else:
             for item in result:
                 source_file = os.path.join(base_path,item['full_file_name'])
@@ -160,6 +202,10 @@ class FileDB:
             return "successfully!"
 
     def close(self):
+        """ 关闭数据库连接
+
+        :return: 无返回值
+        """
         self.__file_db.close()
 
 
