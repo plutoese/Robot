@@ -1,7 +1,7 @@
 # coding=UTF-8
 
 # --------------------------------------------------------------
-# class_MongoDB文件
+# class_mongodb文件
 # @class: MongoDB类
 # @introduction: MongoDB类用来链接Mongodb数据库
 # @dependency: pymongo包
