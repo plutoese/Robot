@@ -51,7 +51,8 @@ class Proxy:
             opener = request.build_opener(proxy_handler)
             opener.addheaders = [('User-agent', 'Mozilla/5.0')]
             request.install_opener(opener)
-            request.urlopen(check_address)
+            req = request.Request(check_address, method='HEAD')
+            request.urlopen(req,timeout=60)
         except Exception:
             return False
         return True
@@ -82,7 +83,7 @@ class Proxy:
         return self.__password
 
 if __name__ == '__main__':
-    proxy = Proxy(full_address='http://160.191.164.22:3128')
+    proxy = Proxy(full_address='http://36.7.108.56:8000')
     print(proxy.address,proxy.port,proxy.username,proxy.password)
     if proxy.is_valid():
         print(proxy.full_address)
