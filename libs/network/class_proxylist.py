@@ -28,7 +28,7 @@ class ProxyList:
         self.__proxy_unchecked_list = self._parse()
         self.__proxy_checked_list = list()
 
-    def export(self,file=r'd:\down\proxy_list.pkl'):
+    def export(self,file=r'E:\gitrobot\files\proxy\proxy_list.pkl'):
         """ 到处有效的代理服务器列表到文件
 
         :param str file: 文件名
@@ -105,9 +105,11 @@ class ProxyList:
 if __name__ == '__main__':
     plist = ProxyList()
     print(plist.proxy_unchecked_list)
+    print(plist.proxy_checked_list)
 
+    '''
     plist.export()
 
-    F = open(r'd:\down\proxy_list.pkl', 'rb')
+    F = open(r'E:\gitrobot\files\proxy\proxy_list.pkl', 'rb')
     proxy_list = pickle.load(F)
-    print('finally, ',proxy_list)
+    print('finally, ',proxy_list)'''

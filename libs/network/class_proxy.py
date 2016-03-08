@@ -10,6 +10,7 @@
 # --------------------------------------------------------------
 
 import re
+from bs4 import BeautifulSoup
 from urllib import request
 
 
@@ -39,20 +40,23 @@ class Proxy:
         else:
             self.__address = 80
 
-    def is_valid(self,check_address='http://www.163.com'):
+    def is_valid(self,check_address='http://epub.cnki.net/kns/brief/result.aspx?dbprefix=CJFQ'):
         """ 验证proxy是否有效
 
         :param str check_address: 验证网址
         :return: 返回验证结果
         :rtype: bool
         """
+        check_address = 'http://gkcx.eol.cn/soudaxue/queryProvinceScore.html'
         try:
             proxy_handler = request.ProxyHandler({self.__type: self.__full_address})
             opener = request.build_opener(proxy_handler)
             opener.addheaders = [('User-agent', 'Mozilla/5.0')]
             request.install_opener(opener)
-            req = request.Request(check_address, method='HEAD')
-            request.urlopen(req,timeout=60)
+            req = request.Request(check_address)
+            web = request.urlopen(req,timeout=60)
+            bs = BeautifulSoup(web.read(),'lxml')
+            print(bs.title)
         except Exception:
             return False
         return True
@@ -83,9 +87,9 @@ class Proxy:
         return self.__password
 
 if __name__ == '__main__':
-    proxy = Proxy(full_address='http://36.7.108.56:8000')
+    proxy = Proxy(full_address='http://111.56.13.152:80')
     print(proxy.address,proxy.port,proxy.username,proxy.password)
-    if proxy.is_valid():
+    if proxy.is_valid(check_address='http://epub.cnki.net/kns/brief/result.aspx?dbprefix=CJFQ'):
         print(proxy.full_address)
     else:
         print('It is a bad proxy!')
