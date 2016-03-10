@@ -13,14 +13,18 @@ proxy_checked_list = ['58.20.234.243:8000','58.20.242.85:8000',
                       '60.13.74.184:81','110.52.232.60:8000',
                       '58.247.30.222:8080','58.22.86.44:8000']
 
-proxy_checked_list = ['58.252.2.5:8000', '61.179.110.8:8081', '58.252.8.25:8000', '1.197.14.102:8000', '111.12.107.19:80', '1.193.162.123:8000']
+valid_proxy = ['61.174.10.22:8080', '101.66.253.22:8080']
+
+proxy_checked_list = [ '58.20.235.180:8000','61.174.10.22:8080', '58.20.184.187:8000',
+                       '101.66.253.22:8080', '14.18.236.98:80',
+                       '110.52.232.56:8000', '58.252.7.125:8000', '110.52.232.56:80', '60.191.167.93:3128', '110.52.232.60:8000', '110.52.232.60:80']
 
 regions = ['安徽','北京','重庆','福建','广东','广西','甘肃','贵州','河北','河南',
            '湖南','湖北','海南','黑龙江','吉林','江苏','江西','辽宁','内蒙古',
            '宁夏','青海','上海','四川','山西','山东','陕西','天津','新疆','西藏','云南','浙江']
 subject = ['文科','理科']
 
-college_rate_file = r'E:\gitrobot\files\college\rating\college_rating.xlsx'
+college_rate_file = r'E:\robot\files\college\rating\college_rating.xlsx'
 mexcel = Excel(college_rate_file)
 mdata = mexcel.read()
 universities = [item[1] for item in mdata[2:]]
@@ -29,9 +33,9 @@ result = []
 
 # 1. 开始抓取
 
-college = universities[1]
+college = universities[3]
 spider = CEESpider(proxy=proxy_checked_list[random.randint(0,len(proxy_checked_list)-1)])
-for region in regions[2:]:
+for region in regions[0:]:
     print(region)
     result = []
     for sub in subject:
@@ -43,7 +47,7 @@ for region in regions[2:]:
         spider.get_result_and_more()
         result.extend(spider.colleges)
 
-    file_name = ''.join(['E:/gitrobot/files/college/exam/',college,'_',region,'.txt'])
+    file_name = ''.join(['E:/robot/files/college/exam/',college,'_',region,'.txt'])
     json.dump(result, fp=open(file_name,'w'))
 
 spider.close()

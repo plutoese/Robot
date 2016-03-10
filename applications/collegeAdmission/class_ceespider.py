@@ -31,6 +31,7 @@ class CEESpider:
         self.last_url = ''
         self.current_url = ''
         self.result = []
+        self.no_result = False
 
         self.browser = AutoBrowser(proxy=proxy,timeout=20)
         self.browser.surf('http://gkcx.eol.cn/soudaxue/queryProvinceScore.html',ready_check=(By.LINK_TEXT,'末页'))
@@ -76,16 +77,21 @@ class CEESpider:
         :return: 无返回值
         """
         self.browser.interact_one_time('#dxlqx > form:nth-child(1) > div:nth-child(2) > input:nth-child(1)',click=True)
-        if self.browser.is_ready(locator=(By.CSS_SELECTOR,''.join(['td > a[title="',self.college,'"]']))):
-            self.current_url = self.browser.browser.current_url
+        if self.browser.browser.find_element_by_id('noResultMessage').text == '':
+            if self.browser.is_ready(locator=(By.CSS_SELECTOR,''.join(['td > a[title="',self.college,'"]']))):
+                self.current_url = self.browser.browser.current_url
+            else:
+                raise TimeoutError
         else:
-            raise TimeoutError
+            self.no_result = True
 
     def get_result_and_more(self):
         """ 添加所有页结果到self.result
 
         :return:
         """
+        if self.no_result:
+            return None
         self.result.append(self.browser.get_text(location='#queryschoolad',beautiful=False))
 
         self.last_url = self.current_url
@@ -133,9 +139,9 @@ class CEESpider:
         self.browser.quit()
 
 if __name__ == '__main__':
-    spider = CEESpider(proxy='58.20.242.85:8000')
-    spider.select_region('浙江')
-    spider.select_subject()
+    spider = CEESpider(proxy='58.22.86.44:8000')
+    spider.select_region('西藏')
+    spider.select_subject('理科')
     spider.set_college()
     spider.do_search()
     spider.get_result_and_more()
