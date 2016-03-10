@@ -12,8 +12,11 @@
 import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.proxy import Proxy, ProxyType
-from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import Select, WebDriverWait
+from selenium.webdriver.support import expected_conditions
 
 
 class AutoBrowser:
@@ -22,7 +25,7 @@ class AutoBrowser:
     :param str proxy: proxy的地址，形式如'58.20.128.123:80'
     :return: 无返回值
     """
-    def __init__(self,proxy=None):
+    def __init__(self,proxy=None,timeout=0):
         # 设置代理服务器
         if proxy is not None:
             print(proxy)
@@ -36,12 +39,14 @@ class AutoBrowser:
             self.browser = webdriver.Firefox()
 
         # 最大化浏览器
+        if timeout > 0:
+            self.browser.implicitly_wait(timeout)
         self.browser.maximize_window()
         self.pages = dict()
         self.current_window_handle = None
         self.window_handles = None
 
-    def surf(self,website=None,time_out=5):
+    def surf(self,website=None,ready_check=None):
         """ 浏览某网站
 
         :param str website: 网站地址
@@ -49,12 +54,29 @@ class AutoBrowser:
         :return: 无返回值
         """
         self.browser.get(website)
-        time.sleep(time_out)
-        self.pages[self.browser.current_window_handle] = {'url':self.browser.current_url,
+        if ready_check is not None:
+            if self.is_ready(locator=ready_check):
+                self.pages[self.browser.current_window_handle] = {'url':self.browser.current_url,
                                                           'title':self.browser.title,
                                                           'parent':None}
-        self.current_window_handle = self.browser.current_window_handle
-        self.window_handles = set(self.browser.window_handles)
+                self.current_window_handle = self.browser.current_window_handle
+                self.window_handles = set(self.browser.window_handles)
+            else:
+                print('Not Ready')
+
+    def is_ready(self,locator,timeout=120):
+        """ 验证页面是否载入完成
+
+        :param locator: 页面完成检验标志
+        :param timeout: 超时设置
+        :return: 是否载入完成
+        :rtype: bool
+        """
+        try:
+            WebDriverWait(self.browser,timeout).until(expected_conditions.visibility_of_element_located(locator))
+            return True
+        except TimeoutException:
+            return False
 
     def locate(self,css_selector=None,id=None,xpath=None,link_text=None):
         """ 定位页面元素
@@ -67,7 +89,6 @@ class AutoBrowser:
         :rtype: selenium.webdriver.remote.webelement.WebElement
         """
         if css_selector is not None:
-            print(type(self.browser.find_element_by_css_selector(css_selector)))
             return self.browser.find_element_by_css_selector(css_selector)
         if id is not None:
             return self.browser.find_element_by_id(id)
@@ -107,6 +128,7 @@ class AutoBrowser:
         if click is True:
             location.click()
         if send_text is not None:
+            location.clear()
             location.send_keys(send_text)
         if select_text is not None:
             Select(location).select_by_visible_text(select_text)
@@ -158,10 +180,14 @@ class AutoBrowser:
         self.browser.quit()
 
 if __name__ == '__main__':
-    browser = AutoBrowser(proxy='58.20.128.123:80')
-    browser.surf('http://epub.cnki.net/kns/brief/result.aspx?dbprefix=CJFQ')
-    browser.interact_one_time(location=browser.locate('.leftinside > ul:nth-child(1) > li:nth-child(1) > p:nth-child(2) > a:nth-child(3)'),click=True)
-    print(browser.get_text('.txt0'))
-    browser.interact_one_time(location=browser.locate('div.bg_white:nth-child(3) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)'),click=True)
-    print(browser.current_window_handle)
+    browser = AutoBrowser(proxy='110.52.232.56:80',timeout=5)
+    #browser.surf('http://epub.cnki.net/kns/brief/result.aspx?dbprefix=CJFQ')
+    #browser.interact_one_time(location=browser.locate('.leftinside > ul:nth-child(1) > li:nth-child(1) > p:nth-child(2) > a:nth-child(3)'),click=True)
+    #print(browser.get_text('.txt0'))
+    #browser.interact_one_time(location=browser.locate('div.bg_white:nth-child(3) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)'),click=True)
+    #print(browser.current_window_handle)
+    university = '北京大学'
+    print(''.join(['td > a[title="',university,'"]']))
+    browser.surf('http://gkcx.eol.cn/soudaxue/queryProvinceScore.html',
+                 ready_check=(By.CSS_SELECTOR,''.join(['td > a[title="',university,'"]'])))
     browser.quit()
