@@ -28,6 +28,7 @@ class CEESpider:
         self.second_region_set = ['吉林','江苏','江西','辽宁','内蒙古','宁夏','青海']
         self.third_region_set = ['上海','四川','山西','山东','陕西','天津','新疆','西藏','云南','浙江']
         self.college = ''
+        self.region = ''
         self.last_url = ''
         self.current_url = ''
         self.result = []
@@ -42,6 +43,7 @@ class CEESpider:
         :param str region: 省份
         :return: 无返回值
         """
+        self.region = region
         self.browser.interact_one_time('.gaoxiaoshengyuandi_s > span:nth-child(2) > a:nth-child(1) > img:nth-child(1)',click=True)
 
         if region in self.first_region_set:
@@ -78,7 +80,7 @@ class CEESpider:
         """
         self.browser.interact_one_time('#dxlqx > form:nth-child(1) > div:nth-child(2) > input:nth-child(1)',click=True)
         if self.browser.browser.find_element_by_id('noResultMessage').text == '':
-            if self.browser.is_ready(locator=(By.CSS_SELECTOR,''.join(['td > a[title="',self.college,'"]']))):
+            if self.browser.is_ready(locator=(By.LINK_TEXT,'下一页')):
                 self.current_url = self.browser.browser.current_url
             else:
                 raise TimeoutError
@@ -96,14 +98,14 @@ class CEESpider:
 
         self.last_url = self.current_url
         self.browser.interact_one_time(location=self.browser.locate(link_text='下一页'),click=True)
-        if self.browser.is_ready(locator=(By.CSS_SELECTOR,''.join(['td > a[title="',self.college,'"]']))):
+        if self.browser.is_ready(locator=(By.LINK_TEXT,'下一页')):
             self.current_url = self.browser.browser.current_url
 
             while self.last_url != self.current_url:
                 self.result.append(self.browser.get_text(location='#queryschoolad',beautiful=False))
                 self.last_url = self.current_url
                 self.browser.interact_one_time(location=self.browser.locate(link_text='下一页'),click=True)
-                if self.browser.is_ready(locator=(By.CSS_SELECTOR,''.join(['td > a[title="',self.college,'"]']))):
+                if self.browser.is_ready(locator=(By.LINK_TEXT,'下一页')):
                    self.current_url = self.browser.browser.current_url
 
     @property
@@ -139,10 +141,10 @@ class CEESpider:
         self.browser.quit()
 
 if __name__ == '__main__':
-    spider = CEESpider(proxy='58.22.86.44:8000')
-    spider.select_region('西藏')
+    spider = CEESpider(proxy='61.174.10.22:8080')
+    spider.select_region('安徽')
     spider.select_subject('理科')
-    spider.set_college()
+    spider.set_college('武汉大学')
     spider.do_search()
     spider.get_result_and_more()
     print(spider.colleges)
