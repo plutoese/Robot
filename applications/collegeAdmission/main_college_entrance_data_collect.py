@@ -13,13 +13,10 @@ proxy_checked_list = ['58.20.234.243:8000','58.20.242.85:8000',
                       '60.13.74.184:81','110.52.232.60:8000',
                       '58.247.30.222:8080','58.22.86.44:8000']
 
-valid_proxy = ['61.174.10.22:8080', '101.66.253.22:8080','61.174.13.12:80', '101.200.178.46:3128']
+valid_proxy = ['61.174.10.22:8080', '101.66.253.22:8080','61.174.13.12:80', '101.200.178.46:3128','101.226.249.237:80']
 
-proxy_checked_list = ['61.174.10.22:8080',
-                       '101.66.253.22:8080',
-                      '101.200.178.46:3128',
-                      '101.226.249.237:80', '111.63.38.36:3129',
-                      '61.174.13.12:80', '110.53.49.65:8000', '58.16.145.184:80', '101.200.182.29:3128', '58.20.234.243:8000']
+proxy_checked_list = ['58.211.13.26:55336',
+                      '111.2.196.130:80', '101.200.178.46:3128', '111.1.89.254:80', '111.161.126.108:80']
 
 regions = ['安徽','北京','重庆','福建','广东','广西','甘肃','贵州','河北','河南',
            '湖南','湖北','海南','黑龙江','吉林','江苏','江西','辽宁','内蒙古',
@@ -35,11 +32,11 @@ result = []
 
 # 1. 开始抓取Z
 
-college = universities[12]
-spider = CEESpider(proxy=proxy_checked_list[random.randint(0,len(proxy_checked_list)-1)])
+college = universities[14]
+spider = CEESpider(proxy=valid_proxy[random.randint(0,len(proxy_checked_list)-1)])
 for region in regions[0:]:
     print(region)
-    result = []
+    spider.clear()
     for sub in subject:
         print(sub)
         spider.select_region(region)
@@ -47,10 +44,9 @@ for region in regions[0:]:
         spider.set_college(college)
         spider.do_search()
         spider.get_result_and_more()
-        result.extend(spider.colleges)
-
+    print(spider.colleges)
     file_name = ''.join(['E:/robot/files/college/exam/',college,'_',region,'.txt'])
-    json.dump(result, fp=open(file_name,'w'))
+    json.dump(spider.colleges, fp=open(file_name,'w'))
 
 spider.close()
 

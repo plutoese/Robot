@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de6f2056-13b2-4c4c-abb0-b353b15e01b7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/files/college/exam/北京大学.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/collegeAdmission/class_ceespider.py" afterPath="$PROJECT_DIR$/applications/collegeAdmission/class_ceespider.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_collect.py" afterPath="$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_collect.py" />
     </list>
     <ignored path="gitrobot.iws" />
@@ -26,6 +27,7 @@
     <SUITE FILE_PATH="coverage/gitrobot$class_ceespider.coverage" NAME="class_ceespider Coverage Results" MODIFIED="1457575900654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$test_path_file_tags_db.coverage" NAME="test_path_file_tags_db Coverage Results" MODIFIED="1454589572985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
     <SUITE FILE_PATH="coverage/gitrobot$class_path.coverage" NAME="class_path Coverage Results" MODIFIED="1455757230293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/file" />
+    <SUITE FILE_PATH="coverage/gitrobot$main_college_entrance_data_sina.coverage" NAME="main_college_entrance_data_sina Coverage Results" MODIFIED="1457751797942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_webdriver_proxy_check.coverage" NAME="demo_webdriver_proxy_check Coverage Results" MODIFIED="1456755444799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
     <SUITE FILE_PATH="coverage/gitrobot$class_proxy__1_.coverage" NAME="class_proxy (1) Coverage Results" MODIFIED="1456470451562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
     <SUITE FILE_PATH="coverage/gitrobot$fluent_first_class_functions.coverage" NAME="fluent_first_class_functions Coverage Results" MODIFIED="1453024935590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn" />
@@ -37,7 +39,7 @@
     <SUITE FILE_PATH="coverage/gitrobot$fluent_python_data_model.coverage" NAME="fluent_python_data_model Coverage Results" MODIFIED="1452914512599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn" />
     <SUITE FILE_PATH="coverage/gitrobot$class_latexdoc.coverage" NAME="class_latexdoc Coverage Results" MODIFIED="1456018208763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/latex" />
     <SUITE FILE_PATH="coverage/gitrobot$class_localip.coverage" NAME="class_localip Coverage Results" MODIFIED="1456366256530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
-    <SUITE FILE_PATH="coverage/gitrobot$main_college_entrance_data_collect.coverage" NAME="main_college_entrance_data_collect Coverage Results" MODIFIED="1457615332039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
+    <SUITE FILE_PATH="coverage/gitrobot$main_college_entrance_data_collect.coverage" NAME="main_college_entrance_data_collect Coverage Results" MODIFIED="1457709023127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$fluent_design_patterns_with_first_class_functions.coverage" NAME="fluent_design_patterns_with_first_class_functions Coverage Results" MODIFIED="1453025166837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_proxy.coverage" NAME="demo_proxy Coverage Results" MODIFIED="1456211310069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/network" />
     <SUITE FILE_PATH="coverage/gitrobot$class_filerobot.coverage" NAME="class_filerobot Coverage Results" MODIFIED="1455767027276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
@@ -45,6 +47,7 @@
     <SUITE FILE_PATH="coverage/gitrobot$class_Excel.coverage" NAME="class_Excel Coverage Results" MODIFIED="1455688229072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/file" />
     <SUITE FILE_PATH="coverage/gitrobot$class_pathparser.coverage" NAME="class_pathparser Coverage Results" MODIFIED="1455693663752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/file" />
     <SUITE FILE_PATH="coverage/gitrobot$fluent_function_decorators_and_closures.coverage" NAME="fluent_function_decorators_and_closures Coverage Results" MODIFIED="1453087593779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn" />
+    <SUITE FILE_PATH="coverage/gitrobot$demo_college_entrance_data_sina.coverage" NAME="demo_college_entrance_data_sina Coverage Results" MODIFIED="1457741775626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$main_college_rating.coverage" NAME="main_college_rating Coverage Results" MODIFIED="1456535746181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_basic.coverage" NAME="demo_basic Coverage Results" MODIFIED="1456384303406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/network" />
     <SUITE FILE_PATH="coverage/gitrobot$main_path_cleaner.coverage" NAME="main_path_cleaner Coverage Results" MODIFIED="1455767498085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
@@ -59,6 +62,7 @@
     <SUITE FILE_PATH="coverage/gitrobot$demo_web_scraper__1_.coverage" NAME="demo_web_scraper (1) Coverage Results" MODIFIED="1456203995958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/webscraper" />
     <SUITE FILE_PATH="coverage/gitrobot$class_pathtraversal.coverage" NAME="class_pathtraversal Coverage Results" MODIFIED="1455437427570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_latex_basic.coverage" NAME="demo_latex_basic Coverage Results" MODIFIED="1455805657125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/reportrobot" />
+    <SUITE FILE_PATH="coverage/gitrobot$main_insert_college_data.coverage" NAME="main_insert_college_data Coverage Results" MODIFIED="1457693897434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_gaokao_web.coverage" NAME="demo_gaokao_web Coverage Results" MODIFIED="1457572710919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$newTest.coverage" NAME="newTest Coverage Results" MODIFIED="1453114137592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$class_directory.coverage" NAME="class_directory Coverage Results" MODIFIED="1454075897084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/file" />
@@ -71,10 +75,11 @@
     <SUITE FILE_PATH="coverage/gitrobot$demo_search_zhiwang.coverage" NAME="demo_search_zhiwang Coverage Results" MODIFIED="1456810879750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
     <SUITE FILE_PATH="coverage/gitrobot$class_article.coverage" NAME="class_article Coverage Results" MODIFIED="1456021404256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/latex" />
     <SUITE FILE_PATH="coverage/gitrobot$class_proxy.coverage" NAME="class_proxy Coverage Results" MODIFIED="1457157312450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
-    <SUITE FILE_PATH="coverage/gitrobot$class_proxylist.coverage" NAME="class_proxylist Coverage Results" MODIFIED="1457570183081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
+    <SUITE FILE_PATH="coverage/gitrobot$class_proxylist.coverage" NAME="class_proxylist Coverage Results" MODIFIED="1457665892388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_literature_load.coverage" NAME="demo_literature_load Coverage Results" MODIFIED="1457158054901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
     <SUITE FILE_PATH="coverage/gitrobot$class_pathparse.coverage" NAME="class_pathparse Coverage Results" MODIFIED="1454903350076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/file" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_multithread.coverage" NAME="demo_multithread Coverage Results" MODIFIED="1456471297358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/network" />
+    <SUITE FILE_PATH="coverage/gitrobot$class_ceespidersina.coverage" NAME="class_ceespidersina Coverage Results" MODIFIED="1457748788790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$fluent_an_array_of_sequences.coverage" NAME="fluent_an_array_of_sequences Coverage Results" MODIFIED="1452933630370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_web_scraper.coverage" NAME="demo_web_scraper Coverage Results" MODIFIED="1456192689959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$cook_data_structures_and_agorithms.coverage" NAME="cook_data_structures_and_agorithms Coverage Results" MODIFIED="1455250617816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn/cookbook" />
@@ -92,42 +97,44 @@
         <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/class_ceespider.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-              <folding>
-                <element signature="e#320#329#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class_proxylist.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/network/class_proxylist.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
-              <folding>
-                <element signature="e#293#322#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class_autobrowser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/network/class_autobrowser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_college_entrance_data_collect.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main_college_entrance_data_collect.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_collect.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7694704">
-              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="72" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="16" />
+              <folding>
+                <element signature="e#16#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_college_entrance_data_sina.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_sina.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6214953">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+              <folding>
+                <element signature="e#16#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class_ceespidersina.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/class_ceespidersina.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="144" column="4" selection-start-line="144" selection-start-column="4" selection-end-line="149" selection-end-column="32" />
+              <folding>
+                <element signature="e#376#385#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,10 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/libs/file/class_pathparse.py" />
-        <option value="$PROJECT_DIR$/robots/filerobot/class_pathdbcreator.py" />
-        <option value="$PROJECT_DIR$/robots/filerobot/class_pathDBupdater.py" />
-        <option value="$PROJECT_DIR$/libs/file/class_pathnew.py" />
         <option value="$PROJECT_DIR$/ToLearn/cookbook/cook_data_structures_and_agorithms.py" />
         <option value="$PROJECT_DIR$/libs/file/demo_zipfolder.py" />
         <option value="$PROJECT_DIR$/robots/filerobot/class_filerobot_old.py" />
@@ -197,8 +200,12 @@
         <option value="$PROJECT_DIR$/applications/collegeAdmission/demo_gaokao_parse.py" />
         <option value="$PROJECT_DIR$/libs/network/class_autobrowser.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/demo_gaokao_web.py" />
+        <option value="$PROJECT_DIR$/applications/collegeAdmission/main_insert_college_data.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/class_ceespider.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_collect.py" />
+        <option value="$PROJECT_DIR$/applications/collegeAdmission/demo_college_entrance_data_sina.py" />
+        <option value="$PROJECT_DIR$/applications/collegeAdmission/class_ceespidersina.py" />
+        <option value="$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_sina.py" />
       </list>
     </option>
   </component>
@@ -253,6 +260,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="robot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitrobot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="robot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitrobot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="robot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="network" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -348,8 +387,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,43 +405,7 @@
       <recent name="E:\gitrobot\ToLearn\fluent" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main_college_entrance_data_collect">
-    <configuration default="false" name="class_proxylist" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/libs/network" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gitrobot" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/libs/network/class_proxylist.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="class_ceespider" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/collegeAdmission" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gitrobot" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/class_ceespider.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.main_college_entrance_data_sina">
     <configuration default="false" name="main_college_entrance_data_collect" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -421,25 +424,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="class_autobrowser" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/libs/network" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gitrobot" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/libs/network/class_autobrowser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="demo_gaokao_web" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="main_insert_college_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -452,7 +437,61 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gitrobot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/demo_gaokao_web.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/main_insert_college_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="demo_college_entrance_data_sina" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/collegeAdmission" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="gitrobot" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/demo_college_entrance_data_sina.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="class_ceespidersina" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/collegeAdmission" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="gitrobot" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/class_ceespidersina.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="main_college_entrance_data_sina" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/collegeAdmission" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="gitrobot" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_sina.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -652,19 +691,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.class_proxylist" />
-      <item index="1" class="java.lang.String" itemvalue="Python.class_ceespider" />
-      <item index="2" class="java.lang.String" itemvalue="Python.main_college_entrance_data_collect" />
-      <item index="3" class="java.lang.String" itemvalue="Python.class_autobrowser" />
-      <item index="4" class="java.lang.String" itemvalue="Python.demo_gaokao_web" />
+      <item index="0" class="java.lang.String" itemvalue="Python.main_college_entrance_data_collect" />
+      <item index="1" class="java.lang.String" itemvalue="Python.main_insert_college_data" />
+      <item index="2" class="java.lang.String" itemvalue="Python.demo_college_entrance_data_sina" />
+      <item index="3" class="java.lang.String" itemvalue="Python.class_ceespidersina" />
+      <item index="4" class="java.lang.String" itemvalue="Python.main_college_entrance_data_sina" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main_college_entrance_data_collect" />
-        <item index="1" class="java.lang.String" itemvalue="Python.class_ceespider" />
-        <item index="2" class="java.lang.String" itemvalue="Python.demo_gaokao_web" />
-        <item index="3" class="java.lang.String" itemvalue="Python.class_proxylist" />
-        <item index="4" class="java.lang.String" itemvalue="Python.class_autobrowser" />
+        <item index="0" class="java.lang.String" itemvalue="Python.main_college_entrance_data_sina" />
+        <item index="1" class="java.lang.String" itemvalue="Python.class_ceespidersina" />
+        <item index="2" class="java.lang.String" itemvalue="Python.demo_college_entrance_data_sina" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main_college_entrance_data_collect" />
+        <item index="4" class="java.lang.String" itemvalue="Python.main_insert_college_data" />
       </list>
     </recent_temporary>
   </component>
@@ -691,16 +730,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283208" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29885057" sideWeight="0.5453125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29885057" sideWeight="0.5473958" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29885057" sideWeight="0.4546875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29885057" sideWeight="0.45260417" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.49583334" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -754,20 +793,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ToLearn/fluent/fluent_python_data_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ToLearn/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ToLearn/fluent/fluent_design_patterns_with_first_class_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1062,28 +1087,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/network/class_proxy.py">
+    <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/main_insert_college_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1560694">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/network/class_proxylist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.32554516">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
-            <element signature="e#293#322#0" expanded="true" />
+            <element signature="e#16#30#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/demo_gaokao_web.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11214953">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,21 +1105,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/demo_gaokao_web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="14" />
+          <folding>
+            <element signature="e#16#29#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/network/class_proxylist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
+          <folding>
+            <element signature="e#293#322#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/network/class_proxy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/class_ceespider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding>
-            <element signature="e#320#329#0" expanded="true" />
-          </folding>
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_collect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7694704">
-          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="72" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="16" />
+          <folding>
+            <element signature="e#16#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/class_ceespidersina.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="144" column="4" selection-start-line="144" selection-start-column="4" selection-end-line="149" selection-end-column="32" />
+          <folding>
+            <element signature="e#376#385#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_sina.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6214953">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding>
+            <element signature="e#16#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
