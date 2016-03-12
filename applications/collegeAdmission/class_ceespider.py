@@ -87,18 +87,30 @@ class CEESpider:
         else:
             self.no_result = True
 
+        time.sleep(5)
+
+    def clear(self):
+        """ 清空结果
+
+        :return:
+        """
+        self.result = []
+
     def get_result_and_more(self):
         """ 添加所有页结果到self.result
 
         :return:
         """
         if self.no_result:
+            self.no_result = False
             return None
+
         self.result.append(self.browser.get_text(location='#queryschoolad',beautiful=False))
 
         self.last_url = self.current_url
         self.browser.interact_one_time(location=self.browser.locate(link_text='下一页'),click=True)
         if self.browser.is_ready(locator=(By.LINK_TEXT,'下一页')):
+            time.sleep(5)
             self.current_url = self.browser.browser.current_url
 
             while self.last_url != self.current_url:
@@ -125,11 +137,11 @@ class CEESpider:
             if re.match('^--$',item['average_score']) is not None:
                 item['average_score'] = None
             else:
-                item['average_score'] = int(item['average_score'])
+                item['average_score'] = int(float(item['average_score']))
             if re.match('^--$',item['province_control_score']) is not None:
                 item['province_control_score'] = None
             else:
-                item['province_control_score'] = int(item['province_control_score'])
+                item['province_control_score'] = int(float(item['province_control_score']))
 
         return colleges
 
