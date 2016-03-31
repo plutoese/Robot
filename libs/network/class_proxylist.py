@@ -17,7 +17,7 @@ import pickle
 from libs.network.class_multithread import MultiThread
 
 
-class ProxyList:
+class ProxyListFromYoudaili:
     """ ProxyList类用来生成有效的代理服务器列表
 
     :param str proxy_web: proxy的地址，默认为http://www.youdaili.net/Daili/guonei/
@@ -103,7 +103,7 @@ class ProxyList:
         return self.__proxy_unchecked_list
 
 if __name__ == '__main__':
-    plist = ProxyList()
+    plist = ProxyListFromYoudaili()
     print(plist.proxy_unchecked_list)
     print(plist.proxy_checked_list)
 

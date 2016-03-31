@@ -47,7 +47,6 @@ class Proxy:
         :return: 返回验证结果
         :rtype: bool
         """
-        check_address = 'http://gkcx.eol.cn/soudaxue/queryProvinceScore.html'
         try:
             proxy_handler = request.ProxyHandler({self.__type: self.__full_address})
             opener = request.build_opener(proxy_handler)

@@ -18,6 +18,7 @@ from collections import OrderedDict
 from selenium.common.exceptions import NoSuchElementException
 from bs4 import BeautifulSoup
 from libs.network.class_autobrowser import AutoBrowser
+from selenium.webdriver.common.by import By
 
 
 class Cnki:
@@ -28,7 +29,8 @@ class Cnki:
         self.soups = list()
         self.more = True
         self.browser = AutoBrowser(proxy=proxy)
-        self.browser.surf('http://epub.cnki.net/kns/brief/result.aspx?dbprefix=CJFQ')
+        self.browser.surf('http://epub.cnki.net/kns/brief/result.aspx?dbprefix=CJFQ',
+                          ready_check=(By.CSS_SELECTOR,'#bottom'))
         time.sleep(2)
 
     def submit(self):
@@ -114,9 +116,9 @@ class Cnki:
         :return: 无返回值
         """
         if start_period is not None:
-            self.browser.interact_one_time(location=self.browser.locate(id='year_from'),send_text=start_period)
+            self.browser.interact_one_time(location=self.browser.locate(id='year_from'),select_text=start_period)
         if end_period is not None:
-            self.browser.interact_one_time(location=self.browser.locate(id='year_to'),send_text=end_period)
+            self.browser.interact_one_time(location=self.browser.locate(id='year_to'),select_text=end_period)
 
         time.sleep(1)
 
@@ -171,7 +173,7 @@ class Cnki:
                     one_literature['keyword'] = [re.sub('\s+','',keyword) for keyword in re.split(';',re.split('\}\: ',item)[1])
                                                  if len(keyword) > 0]
                 if '{Abstract}' in item:
-                    one_literature['abstract'] = re.split('\}\: ',item)[1]
+                    one_literature['abstract'] = re.sub('\s+','',re.split('\}\: ',item)[1])
                 if '{ISBN/ISSN}' in item:
                     one_literature['ISBN/ISSN'] = re.sub('\s+','',re.split('\}\: ',item)[1])
                 if '{Database Provider}' in item:

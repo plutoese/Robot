@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de6f2056-13b2-4c4c-abb0-b353b15e01b7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/collegeAdmission/demo_college_data_mongodb.py" afterPath="$PROJECT_DIR$/applications/collegeAdmission/demo_college_data_mongodb.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/publication/Chinese_journal.xlsx" afterPath="$PROJECT_DIR$/files/publication/Chinese_journal.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/literature/class_cnki.py" afterPath="$PROJECT_DIR$/applications/literature/class_cnki.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/applications/literature/main_literature_review_one.py" afterPath="$PROJECT_DIR$/applications/literature/main_literature_review_one.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/literature/literature_list.txt" afterPath="$PROJECT_DIR$/files/literature/literature_list.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/latex/class_article.py" afterPath="$PROJECT_DIR$/libs/latex/class_article.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/network/class_autobrowser.py" afterPath="$PROJECT_DIR$/libs/network/class_autobrowser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/network/class_proxy.py" afterPath="$PROJECT_DIR$/libs/network/class_proxy.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/network/class_proxylist.py" afterPath="$PROJECT_DIR$/libs/network/class_proxylist.py" />
     </list>
     <ignored path="gitrobot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,6 +37,7 @@
     <SUITE FILE_PATH="coverage/gitrobot$demo_proxy.coverage" NAME="demo_proxy Coverage Results" MODIFIED="1456211310069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/network" />
     <SUITE FILE_PATH="coverage/gitrobot$fluent_dictionaries_and_sets.coverage" NAME="fluent_dictionaries_and_sets Coverage Results" MODIFIED="1453013438993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn" />
     <SUITE FILE_PATH="coverage/gitrobot$class_mongodb.coverage" NAME="class_mongodb Coverage Results" MODIFIED="1455687429077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/database" />
+    <SUITE FILE_PATH="coverage/gitrobot$demo_publication_rating.coverage" NAME="demo_publication_rating Coverage Results" MODIFIED="1458654414852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
     <SUITE FILE_PATH="coverage/gitrobot$main_college_entrance_data_collect.coverage" NAME="main_college_entrance_data_collect Coverage Results" MODIFIED="1457709023127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$main_file_query.coverage" NAME="main_file_query Coverage Results" MODIFIED="1455767484325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_basic.coverage" NAME="demo_basic Coverage Results" MODIFIED="1456384303406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/network" />
@@ -37,6 +46,7 @@
     <SUITE FILE_PATH="coverage/gitrobot$demo_web_scraper__1_.coverage" NAME="demo_web_scraper (1) Coverage Results" MODIFIED="1456203995958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/webscraper" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_search_zhiwang.coverage" NAME="demo_search_zhiwang Coverage Results" MODIFIED="1456810879750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
     <SUITE FILE_PATH="coverage/gitrobot$class_latexdoc.coverage" NAME="class_latexdoc Coverage Results" MODIFIED="1456018208763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/latex" />
+    <SUITE FILE_PATH="coverage/gitrobot$class_Chinajournaldatabase.coverage" NAME="class_Chinajournaldatabase Coverage Results" MODIFIED="1458885110936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
     <SUITE FILE_PATH="coverage/gitrobot$class_pathtraversal.coverage" NAME="class_pathtraversal Coverage Results" MODIFIED="1455437427570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
     <SUITE FILE_PATH="coverage/gitrobot$class_directory.coverage" NAME="class_directory Coverage Results" MODIFIED="1454075897084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/file" />
     <SUITE FILE_PATH="coverage/gitrobot$class_FileRobot.coverage" NAME="class_FileRobot Coverage Results" MODIFIED="1453948291700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
@@ -44,15 +54,17 @@
     <SUITE FILE_PATH="coverage/gitrobot$fluent_a_pythonic_object.coverage" NAME="fluent_a_pythonic_object Coverage Results" MODIFIED="1453087724263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn" />
     <SUITE FILE_PATH="coverage/gitrobot$fluent_text_versus_bytes.coverage" NAME="fluent_text_versus_bytes Coverage Results" MODIFIED="1453019933667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn" />
     <SUITE FILE_PATH="coverage/gitrobot$fluent_python_data_model.coverage" NAME="fluent_python_data_model Coverage Results" MODIFIED="1452914512599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn" />
-    <SUITE FILE_PATH="coverage/gitrobot$class_article.coverage" NAME="class_article Coverage Results" MODIFIED="1456021404256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/latex" />
+    <SUITE FILE_PATH="coverage/gitrobot$class_article.coverage" NAME="class_article Coverage Results" MODIFIED="1458700374815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/latex" />
     <SUITE FILE_PATH="coverage/gitrobot$class_cnki.coverage" NAME="class_cnki Coverage Results" MODIFIED="1457231282046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_college_data_mongodb.coverage" NAME="demo_college_data_mongodb Coverage Results" MODIFIED="1457781470707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
-    <SUITE FILE_PATH="coverage/gitrobot$class_autobrowser.coverage" NAME="class_autobrowser Coverage Results" MODIFIED="1457524584168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
+    <SUITE FILE_PATH="coverage/gitrobot$class_autobrowser.coverage" NAME="class_autobrowser Coverage Results" MODIFIED="1459337483172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
     <SUITE FILE_PATH="coverage/gitrobot$class_ceespidersina.coverage" NAME="class_ceespidersina Coverage Results" MODIFIED="1457748788790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
-    <SUITE FILE_PATH="coverage/gitrobot$main_literature_review_one.coverage" NAME="main_literature_review_one Coverage Results" MODIFIED="1456880772535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
+    <SUITE FILE_PATH="coverage/gitrobot$main_literature_review_one.coverage" NAME="main_literature_review_one Coverage Results" MODIFIED="1458702959150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
     <SUITE FILE_PATH="coverage/gitrobot$class_ceespider.coverage" NAME="class_ceespider Coverage Results" MODIFIED="1457575900654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$class_pathDBupdater.coverage" NAME="class_pathDBupdater Coverage Results" MODIFIED="1454980909689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
     <SUITE FILE_PATH="coverage/gitrobot$main_insert_college_data.coverage" NAME="main_insert_college_data Coverage Results" MODIFIED="1457693897434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
+    <SUITE FILE_PATH="coverage/gitrobot$demo_China_journals.coverage" NAME="demo_China_journals Coverage Results" MODIFIED="1458884251981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
+    <SUITE FILE_PATH="coverage/gitrobot$mission_random_data_generator.coverage" NAME="mission_random_data_generator Coverage Results" MODIFIED="1458636651080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mission/econometricsclass" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_zipfolder.coverage" NAME="demo_zipfolder Coverage Results" MODIFIED="1454673865391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/file" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_gaokao_parse.coverage" NAME="demo_gaokao_parse Coverage Results" MODIFIED="1457419699286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_part_two.coverage" NAME="demo_part_two Coverage Results" MODIFIED="1453888687560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn/fluent" />
@@ -61,10 +73,10 @@
     <SUITE FILE_PATH="coverage/gitrobot$demo_multithread.coverage" NAME="demo_multithread Coverage Results" MODIFIED="1456471297358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/network" />
     <SUITE FILE_PATH="coverage/gitrobot$class_iptools.coverage" NAME="class_iptools Coverage Results" MODIFIED="1456388274188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
     <SUITE FILE_PATH="coverage/gitrobot$demo_web_scraper.coverage" NAME="demo_web_scraper Coverage Results" MODIFIED="1456192689959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
-    <SUITE FILE_PATH="coverage/gitrobot$demo_elise_paper.coverage" NAME="demo_elise_paper Coverage Results" MODIFIED="1457861196002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
+    <SUITE FILE_PATH="coverage/gitrobot$demo_elise_paper.coverage" NAME="demo_elise_paper Coverage Results" MODIFIED="1458629915942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
     <SUITE FILE_PATH="coverage/gitrobot$class_filerobot.coverage" NAME="class_filerobot Coverage Results" MODIFIED="1455767027276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
-    <SUITE FILE_PATH="coverage/gitrobot$class_proxy.coverage" NAME="class_proxy Coverage Results" MODIFIED="1457157312450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
-    <SUITE FILE_PATH="coverage/gitrobot$class_proxylist.coverage" NAME="class_proxylist Coverage Results" MODIFIED="1457665892388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
+    <SUITE FILE_PATH="coverage/gitrobot$class_proxy.coverage" NAME="class_proxy Coverage Results" MODIFIED="1458645641543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
+    <SUITE FILE_PATH="coverage/gitrobot$class_proxylist.coverage" NAME="class_proxylist Coverage Results" MODIFIED="1459336183277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
     <SUITE FILE_PATH="coverage/gitrobot$class_Excel.coverage" NAME="class_Excel Coverage Results" MODIFIED="1455688229072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/file" />
     <SUITE FILE_PATH="coverage/gitrobot$test_path_file_tags_db.coverage" NAME="test_path_file_tags_db Coverage Results" MODIFIED="1454589572985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
     <SUITE FILE_PATH="coverage/gitrobot$class_osoperator.coverage" NAME="class_osoperator Coverage Results" MODIFIED="1454821735630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
@@ -73,6 +85,7 @@
     <SUITE FILE_PATH="coverage/gitrobot$class_localip.coverage" NAME="class_localip Coverage Results" MODIFIED="1456366256530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/network" />
     <SUITE FILE_PATH="coverage/gitrobot$class_pathdb.coverage" NAME="class_pathdb Coverage Results" MODIFIED="1455761674555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
     <SUITE FILE_PATH="coverage/gitrobot$main_college_entrance_data_sina.coverage" NAME="main_college_entrance_data_sina Coverage Results" MODIFIED="1457751797942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/collegeAdmission" />
+    <SUITE FILE_PATH="coverage/gitrobot$class_cnkiliterature.coverage" NAME="class_cnkiliterature Coverage Results" MODIFIED="1459386063574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/applications/literature" />
     <SUITE FILE_PATH="coverage/gitrobot$class_pathparser.coverage" NAME="class_pathparser Coverage Results" MODIFIED="1455693663752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/file" />
     <SUITE FILE_PATH="coverage/gitrobot$class_filedb.coverage" NAME="class_filedb Coverage Results" MODIFIED="1455524947057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/robots/filerobot" />
     <SUITE FILE_PATH="coverage/gitrobot$cook_data_structures_and_agorithms.coverage" NAME="cook_data_structures_and_agorithms Coverage Results" MODIFIED="1455250617816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ToLearn/cookbook" />
@@ -94,37 +107,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="demo_college_data_mongodb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/demo_college_data_mongodb.py">
+      <file leaf-file-name="class_cnki.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applications/literature/class_cnki.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="34" />
+              <caret line="179" column="54" selection-start-line="179" selection-start-column="54" selection-end-line="179" selection-end-column="54" />
               <folding>
-                <element signature="e#16#27#0" expanded="true" />
+                <element signature="e#278#287#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo_elise_paper.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/demo_elise_paper.py">
+      <file leaf-file-name="class_proxylist.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/network/class_proxylist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5576923">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class_cnkiliterature.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/applications/literature/class_cnkiliterature.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="6.8076925">
+              <caret line="118" column="40" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
               <folding>
-                <element signature="e#16#25#0" expanded="true" />
+                <element signature="e#305#316#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo_bokeh_graph.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/demo_bokeh_graph.py">
+      <file leaf-file-name="class_Chinajournaldatabase.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/applications/literature/class_Chinajournaldatabase.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="63" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="63" />
+              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
               <folding>
-                <element signature="e#0#51#0" expanded="true" />
+                <element signature="e#324#335#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,11 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/robots/filerobot/main_path_cleaner.py" />
-        <option value="$PROJECT_DIR$/robots/filerobot/main_file_query.py" />
-        <option value="$PROJECT_DIR$/libs/file/class_Excel.py" />
-        <option value="$PROJECT_DIR$/libs/file/class_file.py" />
-        <option value="$PROJECT_DIR$/libs/file/class_pathparser.py" />
         <option value="$PROJECT_DIR$/libs/file/class_path.py" />
         <option value="$PROJECT_DIR$/robots/filerobot/class_pathdb.py" />
         <option value="$PROJECT_DIR$/robots/filerobot/class_filedb.py" />
@@ -162,7 +180,6 @@
         <option value="$PROJECT_DIR$/libs/latex/class_latex.py" />
         <option value="$PROJECT_DIR$/libs/latex/class_latexfromtemplate.py" />
         <option value="$PROJECT_DIR$/libs/latex/class_report.py" />
-        <option value="$PROJECT_DIR$/libs/latex/class_article.py" />
         <option value="$PROJECT_DIR$/libs/latex/class_latexdoc.py" />
         <option value="$PROJECT_DIR$/libs/database/class_mongodb.py" />
         <option value="$PROJECT_DIR$/applications/network/demo_proxy.py" />
@@ -179,14 +196,9 @@
         <option value="$PROJECT_DIR$/applications/literature/class_cnki_old.py" />
         <option value="$PROJECT_DIR$/applications/literature/demo_parse_cnki.py" />
         <option value="$PROJECT_DIR$/applications/literature/main_literature_review.py" />
-        <option value="$PROJECT_DIR$/applications/literature/main_literature_review_one.py" />
-        <option value="$PROJECT_DIR$/libs/network/class_proxylist.py" />
         <option value="$PROJECT_DIR$/applications/literature/demo_literature_load.py" />
-        <option value="$PROJECT_DIR$/libs/network/class_proxy.py" />
-        <option value="$PROJECT_DIR$/applications/literature/class_cnki.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/class_cee.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/demo_gaokao_parse.py" />
-        <option value="$PROJECT_DIR$/libs/network/class_autobrowser.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/demo_gaokao_web.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/main_insert_college_data.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/class_ceespider.py" />
@@ -197,6 +209,17 @@
         <option value="$PROJECT_DIR$/applications/collegeAdmission/demo_college_data_mongodb.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/demo_bokeh_graph.py" />
         <option value="$PROJECT_DIR$/applications/collegeAdmission/demo_elise_paper.py" />
+        <option value="$PROJECT_DIR$/mission/econometricsclass/mission_random_data_generator.py" />
+        <option value="$PROJECT_DIR$/applications/literature/demo_publication_rating.py" />
+        <option value="$PROJECT_DIR$/libs/latex/class_article.py" />
+        <option value="$PROJECT_DIR$/applications/literature/main_literature_review_one.py" />
+        <option value="$PROJECT_DIR$/libs/network/class_proxy.py" />
+        <option value="$PROJECT_DIR$/libs/network/class_proxylist.py" />
+        <option value="$PROJECT_DIR$/applications/literature/demo_China_journals.py" />
+        <option value="$PROJECT_DIR$/applications/literature/class_Chinajournaldatabase.py" />
+        <option value="$PROJECT_DIR$/libs/network/class_autobrowser.py" />
+        <option value="$PROJECT_DIR$/applications/literature/class_cnki.py" />
+        <option value="$PROJECT_DIR$/applications/literature/class_cnkiliterature.py" />
       </list>
     </option>
   </component>
@@ -236,8 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -284,7 +305,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="file" />
+              <option name="myItemId" value="network" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,6 +337,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitrobot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitrobot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="applications" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -334,12 +369,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="collegeAdmission" />
+              <option name="myItemId" value="literature" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,93 +393,93 @@
       <recent name="E:\gitrobot\ToLearn\fluent" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.demo_elise_paper">
-    <configuration default="false" name="class_ceespidersina" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.class_cnkiliterature">
+    <configuration default="false" name="class_proxylist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/collegeAdmission" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/libs/network" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gitrobot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/class_ceespidersina.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/libs/network/class_proxylist.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="main_college_entrance_data_sina" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="class_cnkiliterature" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/collegeAdmission" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/literature" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gitrobot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_sina.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/literature/class_cnkiliterature.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="demo_college_data_mongodb" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="demo_China_journals" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/collegeAdmission" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/literature" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gitrobot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/demo_college_data_mongodb.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/literature/demo_China_journals.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="demo_elise_paper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="class_Chinajournaldatabase" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/collegeAdmission" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/literature" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gitrobot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/demo_elise_paper.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/literature/class_Chinajournaldatabase.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="demo_bokeh_graph" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="class_autobrowser" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/collegeAdmission" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/libs/network" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gitrobot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/applications/collegeAdmission/demo_bokeh_graph.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/libs/network/class_autobrowser.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -642,19 +679,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.class_ceespidersina" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main_college_entrance_data_sina" />
-      <item index="2" class="java.lang.String" itemvalue="Python.demo_college_data_mongodb" />
-      <item index="3" class="java.lang.String" itemvalue="Python.demo_elise_paper" />
-      <item index="4" class="java.lang.String" itemvalue="Python.demo_bokeh_graph" />
+      <item index="0" class="java.lang.String" itemvalue="Python.class_proxylist" />
+      <item index="1" class="java.lang.String" itemvalue="Python.class_cnkiliterature" />
+      <item index="2" class="java.lang.String" itemvalue="Python.demo_China_journals" />
+      <item index="3" class="java.lang.String" itemvalue="Python.class_Chinajournaldatabase" />
+      <item index="4" class="java.lang.String" itemvalue="Python.class_autobrowser" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.demo_elise_paper" />
-        <item index="1" class="java.lang.String" itemvalue="Python.demo_bokeh_graph" />
-        <item index="2" class="java.lang.String" itemvalue="Python.demo_college_data_mongodb" />
-        <item index="3" class="java.lang.String" itemvalue="Python.main_college_entrance_data_sina" />
-        <item index="4" class="java.lang.String" itemvalue="Python.class_ceespidersina" />
+        <item index="0" class="java.lang.String" itemvalue="Python.class_cnkiliterature" />
+        <item index="1" class="java.lang.String" itemvalue="Python.class_autobrowser" />
+        <item index="2" class="java.lang.String" itemvalue="Python.class_proxylist" />
+        <item index="3" class="java.lang.String" itemvalue="Python.class_Chinajournaldatabase" />
+        <item index="4" class="java.lang.String" itemvalue="Python.demo_China_journals" />
       </list>
     </recent_temporary>
   </component>
@@ -681,20 +718,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="2" width="1934" height="1028" extended-state="0" />
-    <editor active="false" />
+    <frame x="-10" y="2" width="1934" height="1028" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26002166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31798482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283208" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29861984" sideWeight="0.55362946" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29861984" sideWeight="0.5796316" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29861984" sideWeight="0.44637054" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29861984" sideWeight="0.42036837" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.49583334" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40229884" sideWeight="0.47864583" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40150565" sideWeight="0.4767064" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -739,67 +776,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ToLearn/fluent/demo_part_one.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12072434">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ToLearn/cookbook/cook_data_structures_and_agorithms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43421054">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ToLearn/fluent/demo_part_two.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56578946">
-          <caret line="20" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ToLearn/fluent/fluent_a_pythonic_object.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.039473683">
-          <caret line="3" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/file/demo_zipfolder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robots/filerobot/class_pathdb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/file/class_pathparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="337" column="0" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/file/class_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/robots/filerobot/class_osoperator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.142857">
@@ -870,34 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/latex/class_latexdoc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.057803467">
-          <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/latex/class_report.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.057803467">
-          <caret line="114" column="46" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/latex/class_article.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4123315">
-          <caret line="40" column="104" selection-start-line="40" selection-start-column="104" selection-end-line="40" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/latex/class_latexfromtemplate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.057803467">
-          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applications/webscraper/ghostdriver.log">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -954,34 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/applications/literature/demo_literature_load.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40462428">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/network/class_iptools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.5915222">
-          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/network/class_multithread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.37186897">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/applications/literature/main_literature_review_one.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88439304">
-          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applications/network/demo_basic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8342967">
@@ -996,38 +921,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/applications/literature/class_cnki.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="217" column="29" selection-start-line="217" selection-start-column="29" selection-end-line="217" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/network/class_autobrowser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/demo_gaokao_web.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/network/class_proxylist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/network/class_proxy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1042,9 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13461539">
           <caret line="144" column="4" selection-start-line="144" selection-start-column="4" selection-end-line="149" selection-end-column="32" />
-          <folding>
-            <element signature="e#376#385#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1055,21 +949,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/database/class_mongodb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/main_college_entrance_data_sina.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42307693">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="47" selection-end-column="32" />
-          <folding>
-            <element signature="e#16#29#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1077,18 +960,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59615386">
           <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
-          <folding>
-            <element signature="e#320#329#0" expanded="true" />
-            <marker date="1457761681581" expanded="true" signature="2668:3159" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/file/class_Excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42307693">
-          <caret line="151" column="4" selection-start-line="151" selection-start-column="4" selection-end-line="154" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,28 +967,183 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="63" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/demo_college_data_mongodb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="34" />
-          <folding>
-            <element signature="e#16#27#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/demo_elise_paper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5576923">
+        <state vertical-scroll-proportion="0.057692308">
           <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/collegeAdmission/demo_college_data_mongodb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.057692308">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/file/class_Excel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/site-packages/selenium/webdriver/remote/webelement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3326923">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/literature/literature_list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/literature/demo_literature_load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23076923">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/literature/demo_publication_rating.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/latex/class_latexfromtemplate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/latex/class_latexdoc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/latex/class_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8826923">
+          <caret line="114" column="46" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/latex/class_article.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mission/econometricsclass/mission_random_data_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4057692">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/network/class_proxy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/network/class_multithread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/network/class_iptools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/database/class_mongodb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.326923">
+          <caret line="84" column="18" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/literature/demo_China_journals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48076922">
+          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/literature/main_literature_review_one.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.057692308">
+          <caret line="54" column="55" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/network/class_proxylist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python34/Lib/site-packages/selenium/webdriver/firefox/firefox_binary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3326923">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/network/class_autobrowser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="182" column="43" selection-start-line="182" selection-start-column="43" selection-end-line="182" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/literature/class_cnki.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="179" column="54" selection-start-line="179" selection-start-column="54" selection-end-line="179" selection-end-column="54" />
           <folding>
-            <element signature="e#16#25#0" expanded="true" />
+            <element signature="e#278#287#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/literature/class_cnkiliterature.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.8076925">
+          <caret line="118" column="40" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
+          <folding>
+            <element signature="e#305#316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applications/literature/class_Chinajournaldatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding>
+            <element signature="e#324#335#0" expanded="true" />
           </folding>
         </state>
       </provider>

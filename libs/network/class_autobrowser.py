@@ -180,7 +180,7 @@ class AutoBrowser:
         self.browser.quit()
 
 if __name__ == '__main__':
-    browser = AutoBrowser(proxy='110.52.232.56:80',timeout=5)
+    browser = AutoBrowser(proxy='117.177.25.151:82',timeout=5)
     #browser.surf('http://epub.cnki.net/kns/brief/result.aspx?dbprefix=CJFQ')
     #browser.interact_one_time(location=browser.locate('.leftinside > ul:nth-child(1) > li:nth-child(1) > p:nth-child(2) > a:nth-child(3)'),click=True)
     #print(browser.get_text('.txt0'))
@@ -188,6 +188,7 @@ if __name__ == '__main__':
     #print(browser.current_window_handle)
     university = '北京大学'
     print(''.join(['td > a[title="',university,'"]']))
+    time.sleep(10)
     browser.surf('http://gkcx.eol.cn/soudaxue/queryProvinceScore.html',
                  ready_check=(By.CSS_SELECTOR,''.join(['td > a[title="',university,'"]'])))
     browser.quit()
