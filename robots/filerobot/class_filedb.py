@@ -64,9 +64,11 @@ class FileDB:
                 difference['time'] = file.parser.time
             # 若存在差异，则更新数据库中的信息
             if len(difference) > 0:
-                self.collection.find_one_and_update({'_id':fid},
-                                                    {'$set':difference})
-            return fid
+                self.collection.insert_one(self.make_document(file,path,path_found,False))
+                return None
+            else:
+                #self.collection.find_one_and_update({'_id':fid},{'$set':difference})
+                return fid
         else:
             # 若数据库中无此文件信息，那么插入此信息
             self.collection.insert_one(self.make_document(file,path,path_found,False))
@@ -93,8 +95,11 @@ class FileDB:
                         'last_modified': file.parser.last_modified.ctime(),
                         'size': len(file),
                         'author': file.parser.author,
-                        'time': file.parser.time.ctime(),
                         'version': file.parser.version}
+            if file.parser.time is not None:
+                document['time'] = file.parser.time.ctime()
+            else:
+                document['time'] = None
             if file.parser.tags is not None:
                 document['tags'] = '|'.join(file.parser.tags)
             else:
@@ -132,7 +137,11 @@ class FileDB:
         record = file
         record.pop('_id')
         record['last_modified'] = record['last_modified'].ctime()
-        record['time'] = record['time'].ctime()
+
+        if record['time'] is not None:
+            record['time'] = record['time'].ctime()
+        else:
+            record['time'] = None
 
         if record['tags'] is not None:
             record['tags'] = '|'.join(record['tags'])

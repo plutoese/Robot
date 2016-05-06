@@ -319,9 +319,9 @@ class PathParser:
             self.__time = [int(item) for item in re.split('#',tmp_search_result.group()) if len(item) > 0]
 
         # 析出版本号
-        tmp_search_result = re.search('$[^@#{%&=]+',self.__path_name_without_extension)
+        tmp_search_result = re.search('\$[^@#{%&=]+',self.__path_name_without_extension)
         if tmp_search_result is not None:
-            self.__version = re.sub('$','',tmp_search_result.group())
+            self.__version = re.sub('\$','',tmp_search_result.group())
 
         # 析出标签
         tmp_search_result = re.search('%[^@#${&=]+',self.__path_name_without_extension)
@@ -345,9 +345,9 @@ class PathParser:
 
 
 if __name__ == '__main__':
-    mpath = PathParser(r'd:\down\选课手册导出@glen#2012%database%mongodb%test   blank{自科基金{社科基金&econometricsteaching=.zip')
-    #mpath = PathParser('D:\\down\\demo@glen#2012%database%mongodb%test   blank{自科基金{社科基金&geeker.xlsx')
-    mpath = PathParser(r'E:\Room\forawhile\选课手册导出@glen#2012%database%mongodb%test   blank{自科基金{社科基金&econometricsteaching=')
+    #mpath = PathParser(r'd:\down\选课手册导出@glen#2012%database%mongodb%test   blank{自科基金{社科基金&econometricsteaching=.zip')
+    mpath = PathParser(r'E:\room\forawhile\python\Mining the Social Web#2014$2%python&python&book.pdf')
+    #mpath = PathParser(r'E:\Room\forawhile\选课手册导出@glen#2012%database%mongodb%test   blank{自科基金{社科基金&econometricsteaching=')
     print(mpath)
     print(mpath.path_name_with_absolute_path_without_special_characters)
     print(mpath.is_having_special_character)

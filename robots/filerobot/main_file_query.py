@@ -12,6 +12,6 @@ OPEN_PATH = 'E:\\temp'
 path_robot = FileRobot(dirty_path=FILE_POOL, clean_path=LIB_PATH)
 
 # 2. to do a query
-path_robot.find(open_path=OPEN_PATH,
-                last_modified={'$gt':datetime(2016,2,8)})
+path_robot.find(open_path=OPEN_PATH,last_modified={'$gt':datetime(2016,2,8)})
+
 

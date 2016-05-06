@@ -87,7 +87,7 @@ class Proxy:
 
 if __name__ == '__main__':
     proxy = Proxy(full_address='http://111.56.13.152:80')
-    print(proxy.address,proxy.port,proxy.username,proxy.password)
+    print(proxy.full_address,proxy.address,proxy.port,proxy.username,proxy.password)
     if proxy.is_valid(check_address='http://epub.cnki.net/kns/brief/result.aspx?dbprefix=CJFQ'):
         print(proxy.full_address)
     else:

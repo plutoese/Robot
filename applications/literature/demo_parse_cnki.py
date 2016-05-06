@@ -3,7 +3,7 @@
 import pickle
 import re
 from collections import OrderedDict
-
+'''
 F = open(r'E:\gitrobot\files\literature\literature_list.pkl', 'rb')
 literature_list = pickle.load(F)
 
@@ -48,7 +48,8 @@ for title in literature:
     print(literature[title])
     print('*************************************')
 
-print(len(literature))
+print(len(literature))'''
 
-
+x = '<html><body><p>基本信息 主办单位：中国法学会 出版周期：双月 ISSN：1003-1707 CN：11-1030/D 出版地：北京市</p></body></html>'
+print(re.search('\d{4}-\d{3}[0-9a-zA-Z]',x).group())
 

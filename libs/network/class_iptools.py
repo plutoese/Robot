@@ -53,7 +53,7 @@ class IPTools:
 
     @property
     def local_ip(self):
-        ipinfo = request.urlopen('http://www.whereismyip.com').read()
+        ipinfo = request.urlopen('http://whereismyip.com/?nr=0').read()
         local_ip = re.search('\d+\.\d+\.\d+\.\d+',ipinfo.decode('utf-8')).group()
         return local_ip
 

@@ -9,9 +9,7 @@
 # @date: 2016.03.23
 # --------------------------------------------------------------
 
-import json
 from libs.database.class_mongodb import MongoDB
-from applications.literature.class_cnki import Cnki
 
 
 class ChinaJournalDatabase:

@@ -27,7 +27,7 @@ class MongoDB:
         self.__db = None
         self.__collection = None
 
-    def connect(self, database_name, collection_name):
+    def connect(self, database_name, collection_name=None):
         """连接MongoDB数据中的集合
 
         :param str database_name: 数据库名称
@@ -41,11 +41,12 @@ class MongoDB:
             print('No such database: ', database_name)
             raise NameError
 
-        if collection_name in self.__db.collection_names():
-            self.__collection = self.__db[collection_name]
-        else:
-            print('No such collection: ', collection_name)
-            raise NameError
+        if collection_name is not None:
+            if collection_name in self.__db.collection_names():
+                self.__collection = self.__db[collection_name]
+            else:
+                print('No such collection: ', collection_name)
+                raise NameError
 
     def close(self):
         """ 关闭MongoDB连接
@@ -84,4 +85,6 @@ class MongoDB:
 if __name__ == '__main__':
     db = MongoDB()
     print(db.client.database_names())
+    db.connect('region','province')
+    print(db.collection)
 

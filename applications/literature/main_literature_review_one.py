@@ -22,15 +22,15 @@ PROXY_LIST = ['58.20.128.123:80', '36.7.151.29:8000', '61.174.13.12:80',
               '101.226.249.237:80', '111.1.89.254:80', '112.16.87.24:80']
 PROXY_LIST = ['111.56.13.150:80', '115.159.5.247:8080', '117.136.234.6:843',
               '60.191.179.53:3128', '60.191.163.235:3128', '120.52.73.33:80']
-QUERY_STRING = "SU='城市'*'收缩'"
+QUERY_STRING = "JN='经济研究'"
 START_PERIOD = "2010"
 END_PERIOD = "2016"
 SUBJECTS = ["经济与管理科学","社会科学Ⅱ辑"]
 LITERATURE_JSON_FILE = r"E:\gitrobot\files\literature\literature_list.txt"
 db = MongoDB()
 db.connect('publication','ChineseJournal')
-journals = db.collection.find({},projection={'_id':0,'期刊名称':1,'复合影响因子':1})
-jours = dict([(journal['期刊名称'],journal['复合影响因子']) for journal in journals])
+journals = db.collection.find({},projection={'_id':0,'中文名称':1,'复合影响因子':1})
+jours = dict([(journal['中文名称'],journal.get('复合影响因子')) for journal in journals])
 jours_set = jours.keys()
 
 STEP_ONE = False
@@ -38,7 +38,8 @@ STEP_TWO = True
 
 # 2. 进行CNKI网站操作
 if STEP_ONE:
-    cnki_obj = Cnki(PROXY_LIST[random.randint(0,len(PROXY_LIST)-1)])
+    cnki_obj = Cnki()
+    #cnki_obj = Cnki(PROXY_LIST[random.randint(0,len(PROXY_LIST)-1)])
     cnki_obj.set_query(QUERY_STRING)
     cnki_obj.set_period(start_period=START_PERIOD,end_period=END_PERIOD)
     cnki_obj.set_subject(subjects=SUBJECTS)
@@ -74,11 +75,12 @@ if STEP_TWO:
     replace_word = {'articleTitle':'计量经济学',
                     'arcticleabstract':'摘要'}
     doc = Article(r'E:\latex\template\article_template_02.tex',replace_word)
-    for key in sorted(sortable_literatures,reverse=True)[0:10]:
+    for key in sorted(sortable_literatures,reverse=True):
         item = sortable_literatures[key]
         print(key,sortable_literatures[key])
         doc.document.add_section(item['title'],3)
         doc.document.add_list(['---'.join([item['journal'],item['year']])],type=1)
+        abstract = item['abstract']
         doc.document.append(item['abstract'])
 
     doc.document.generate_tex(r'E:\latex\myreport')

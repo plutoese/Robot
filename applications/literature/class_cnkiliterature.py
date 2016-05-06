@@ -12,6 +12,7 @@
 import json
 from applications.literature.class_cnki import Cnki
 from applications.literature.class_Chinajournaldatabase import ChinaJournalDatabase
+from libs.latex.class_article import Article
 
 
 class CnkiLiterature:
@@ -78,8 +79,31 @@ class CnkiLiterature:
             del tmp_result[key]['rate']
         self.__literatrues = [tmp_result[item] for item in sorted(tmp_result,reverse=True)]
 
+    def export_to_pdf(self,out_file,title='',abstract=''):
+        """ 输出文献综述到pdf文件
+
+        :param out_file: 文档名称
+        :param title: 文档标题
+        :param abstract: 文档摘要
+        :return: 无返回值
+        """
+        replace_word = {'articleTitle':title,'arcticleabstract':abstract}
+        doc = Article(r'E:\gitrobot\files\latex_template\article_template_01.tex',replace_word)
+
+        for item in self.__literatrues:
+            doc.document.add_section(item['title'],3)
+            doc.document.add_list(['---'.join([item['journal'],item['year']])],type=1)
+            doc.document.append(item['abstract'].encode().decode())
+
+        doc.document.generate_tex(out_file)
+        doc.document.generate_pdf(out_file)
+
     @property
     def literatrues(self):
+        """ 文献
+
+        :return: 文献
+        """
         return self.__literatrues
 
     def close(self):
@@ -91,30 +115,29 @@ class CnkiLiterature:
 
 if __name__ == '__main__':
     '''
-    mcnki = CnkiLiterature(proxy='117.177.250.152:8080')
-    QUERY_STRING = "SU='城市化'*'收入差距'"
-    START_PERIOD = "2012"
+    mcnki = CnkiLiterature()
+    QUERY_STRING = "JN='数量经济技术经济研究'"
+    START_PERIOD = "2014"
+    END_PERIOD = "2016"
 
-    mcnki.query(query_str=QUERY_STRING,start_period=START_PERIOD,limit=2)
+    mcnki.query(query_str=QUERY_STRING,start_period=START_PERIOD,end_period=END_PERIOD,limit=5)
     mcnki.sort_by('复合影响因子')
     out_file = r'E:\gitrobot\files\literature\demo_literature_data.txt'
     json.dump(mcnki.literatrues, fp=open(out_file,'w'))
     print(mcnki.literatrues)
     mcnki.close()
     '''
-    jounal_db = ChinaJournalDatabase()
     papers = json.load(open(r'E:\gitrobot\files\literature\demo_literature_data.txt'))
+    #papers = json.load(open(r"E:\gitrobot\files\literature\literature_list.txt"))
+    replace_word = {'articleTitle':'文献报告',
+                    'arcticleabstract':'摘要：这是初步的结果。'}
+    doc = Article(r'E:\gitrobot\files\latex_template\article_template_01.tex',replace_word)
     for item in papers:
-        paper = papers[item]
-        paper['title'] = item
-        journal = jounal_db.getByName(journal_name=paper['journal'],auto=True)
-        if len(journal) < 1:
-            paper['rate'] = '---'.join(['0',paper['title']])
-        else:
-            paper['rate'] = '---'.join([str(journal[0]['复合影响因子']),paper['title']])
+        print(item['title'])
+        doc.document.add_section(item['title'],3)
+        doc.document.add_list(['---'.join([item['journal'],item['year']])],type=1)
+        doc.document.append(item['abstract'].encode('GBK').decode('GBK'))
+        print(item['abstract'].encode('GBK').decode('GBK'))
 
-    sortable_literatures = dict([(papers[item]['rate'],papers[item]) for item in papers])
-    for p in sorted(sortable_literatures,reverse=True):
-        del sortable_literatures[p]['rate']
-        print(p,sortable_literatures[p])
-
+    doc.document.generate_tex(r'E:\latex\myreport')
+    doc.document.generate_pdf(r'E:\latex\myreport')
