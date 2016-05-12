@@ -132,6 +132,53 @@ class Receiver(Individual):
             return one,1
         return the_other,2
 
+
+def deferred_acceptance(proposer,receiver,detailed=False):
+    """ ddeferred_acceptance算法
+
+    :param list proposer: 追求者（求婚者）
+    :param list receiver: 被追求者（被求婚者）
+    :param bool detailed: 是否打印每轮的具体信息
+    :return: 无返回值
+    """
+    check = True
+    round = 1
+    while check:
+        for pser in proposer:
+            if pser.more_proposal:
+                pser.make_proposal_to()
+        if detailed:
+            print('Round: ',round)
+            for r in receiver:
+                if r.mate is None:
+                    mate = 'None'
+                else:
+                    mate = r.mate.name
+                print(r.name,' --- ',mate)
+            print('proposers: ')
+            print('---------------------------')
+            for p in proposer:
+                print(p.name,' ~~~ ',','.join([item.name for item in p.preference_list]))
+            print('############################')
+        check = any([p.more_proposal for p in proposer])
+        round += 1
+    # 打印最终结果
+    print('***********Result**********')
+    print('-------Proposer Side------')
+    for item in proposer:
+        if item.mate is None:
+            mate = 'None'
+        else:
+            mate = item.mate.name
+        print(item.name,' --- ',mate)
+    print('-------Receiver Side------')
+    for item in receiver:
+        if item.mate is None:
+            mate = 'None'
+        else:
+            mate = item.mate.name
+        print(item.name,' --- ',mate)
+
 if __name__ == '__main__':
     m1 = Proposer(name='m1')
     m2 = Proposer(name='m2')
@@ -167,6 +214,8 @@ if __name__ == '__main__':
 
     receiver = [w1,w2,w3,w4]
     proposer = [m1,m2,m3,m4,m5]
+    deferred_acceptance(proposer,receiver,detailed=True)
+    '''
     check = True
     i = 1
     while(check):
@@ -188,6 +237,6 @@ if __name__ == '__main__':
             mate = 'None'
         else:
             mate = item.mate.name
-        print(item.name,' --- ',mate)
+        print(item.name,' --- ',mate)'''
 
 
