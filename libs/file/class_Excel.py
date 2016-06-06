@@ -148,7 +148,6 @@ if __name__ == '__main__':
     print(mexcel.sheet)
     print(mdata)
 
-
     outfile = r'd:\down\demo.xlsx'
     moutexcel = Excel(outfile)
     moutexcel.new().append(mdata, 'mysheet')
